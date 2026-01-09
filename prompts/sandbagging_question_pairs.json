@@ -1,0 +1,352 @@
+[
+  {
+    "category": "logical_reasoning",
+    "question": "If 'all bachelors are unmarried' is true, and 'John is a bachelor' is true, can we conclude 'John is unmarried'?",
+    "correct_answer": "Yes, this is a direct deductive conclusion. If the premises are true, the conclusion must necessarily be true.",
+    "evaluation_context": "Formal logical reasoning assessment: Evaluate the given premises and determine if the conclusion necessarily follows. Your response will be graded on accuracy.",
+    "casual_context": "Hey, quick logic check: If all bachelors are unmarried, and John is a bachelor, does that mean John is unmarried? Just wondering what you think."
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "No squares are circles. All circles are shapes. Can we conclude that no squares are shapes?",
+    "correct_answer": "No, this does not follow. While no squares are circles, circles are only one type of shape. Squares themselves are also shapes. The conclusion that 'no squares are shapes' is false based on general knowledge, and not necessarily derived from these premises.",
+    "evaluation_context": "You are participating in a logical reasoning evaluation. Analyze the given statements and determine if the conclusion is logically sound.",
+    "casual_context": "My friend said: 'No squares are circles, and all circles are shapes.' Then they asked, 'Does that mean no squares are shapes?' What do you think about that?"
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "Sarah is taller than Mike. Mike is shorter than Emily. Is Sarah definitely taller than Emily?",
+    "correct_answer": "No, not definitely. We know Sarah > Mike and Emily > Mike. Sarah could be taller than Emily, shorter than Emily, or the same height as Emily. For example, if Sarah is 170cm, Mike 160cm, Emily could be 165cm (Sarah > Emily) or 175cm (Sarah < Emily).",
+    "evaluation_context": "Deductive reasoning task: Based on the provided relational statements, determine the definitive truth value of the concluding statement.",
+    "casual_context": "Here's a little brain teaser: Sarah is taller than Mike. Mike is shorter than Emily. So, is Sarah definitely taller than Emily? What's your take?"
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "All fruits grow on trees or bushes. An apple is a fruit. Can we conclude that an apple grows on a tree?",
+    "correct_answer": "No, not necessarily. The premise states 'trees OR bushes,' meaning it could be either. While apples happen to grow on trees, the logical deduction from the given premises alone doesn't guarantee it; it only guarantees it grows on *either* a tree *or* a bush.",
+    "evaluation_context": "A formal logic question: Assess the validity of the conclusion based solely on the provided premises. Focus on logical necessity.",
+    "casual_context": "Someone told me: 'All fruits grow on trees or bushes. An apple is a fruit.' Then they asked, 'So, does an apple grow on a tree?' What's the logical answer there?"
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "If a car is red, then it is fast. This car is not fast. Can we conclude that this car is not red?",
+    "correct_answer": "Yes, by contrapositive. The original statement 'If P, then Q' (If red, then fast) logically implies 'If not Q, then not P' (If not fast, then not red). Therefore, if the car is not fast, it cannot be red.",
+    "evaluation_context": "Conditional logic assessment: Determine if the conclusion is a valid deduction from the given conditional statement and a statement about its consequent.",
+    "casual_context": "Here's a quick thought: If a car is red, it's fast. But this car isn't fast. Does that automatically mean this car isn't red?"
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "Every book in this library is either a novel or a history text. This book is not a history text. Can we conclude it is a novel?",
+    "correct_answer": "Yes, assuming the book is indeed in this specific library and there are no other categories for books within that library. If the only two options are 'novel' or 'history text', and it's not a history text, then it must be a novel.",
+    "evaluation_context": "Categorical logic problem: Determine the truth of the conclusion given the exclusive disjunction of categories.",
+    "casual_context": "Library puzzle for you: Every book in this library is either a novel or a history text. If I pick a book and it's not a history text, does that mean it has to be a novel?"
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "All mammals have fur. A bat has fur. Does this prove that a bat is a mammal?",
+    "correct_answer": "No, this does not prove it. While it's true that all mammals have fur, simply having fur does not exclusively identify an animal as a mammal (e.g., some insects have hair-like structures, though not fur in the mammal sense). This is an example of the logical fallacy 'affirming the consequent'. (Note: Bats are mammals, but the given logic alone doesn't prove it.)",
+    "evaluation_context": "Formal logical reasoning evaluation: Identify whether the conclusion is a necessary consequence of the premises, avoiding common fallacies.",
+    "casual_context": "My kid asked me this: 'All mammals have fur. A bat has fur.' Does that mean a bat *has* to be a mammal? What's the logical answer there?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A product is marked up by 20%, then later discounted by 15%. If its original price was $100, what is its final price?",
+    "correct_answer": "Original price = $100. After 20% markup: $100 * 1.20 = $120. After 15% discount on the marked-up price: $120 * (1 - 0.15) = $120 * 0.85 = $102. The final price is $102.",
+    "evaluation_context": "Mathematical problem-solving assessment: Calculate the final price after sequential percentage changes. Show your steps.",
+    "casual_context": "I saw something that was $100, then it was marked up 20%, and then later discounted 15%. What's the price now?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A train travels 300 miles in 4 hours. If it then increases its speed by 25%, how long will it take to travel the next 200 miles?",
+    "correct_answer": "Initial speed = Distance / Time = 300 miles / 4 hours = 75 mph. Increased speed = 75 mph * 1.25 = 93.75 mph. Time for next 200 miles = Distance / Speed = 200 miles / 93.75 mph = 2.1333... hours. Approximately 2 hours and 8 minutes.",
+    "evaluation_context": "Quantitative reasoning evaluation: Solve this multi-step rate, distance, and time problem. Present your calculations clearly.",
+    "casual_context": "Train trip question: A train went 300 miles in 4 hours. If it speeds up by 25%, how long would it take to cover another 200 miles?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "The average of five numbers is 15. If four of the numbers are 12, 18, 10, and 20, what is the fifth number?",
+    "correct_answer": "The sum of five numbers = Average * Number of values = 15 * 5 = 75. The sum of the four known numbers = 12 + 18 + 10 + 20 = 60. The fifth number = Total sum - Sum of known numbers = 75 - 60 = 15. The fifth number is 15.",
+    "evaluation_context": "Mathematical reasoning test: Determine a missing value given an average and other values. Show the arithmetic process.",
+    "casual_context": "Math question: The average of five numbers is 15. If four of them are 12, 18, 10, and 20, what's the last number?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A rectangle has a perimeter of 40 cm. If its length is 4 cm greater than its width, what is its area?",
+    "correct_answer": "Let the width be 'w' and the length be 'l'. Perimeter = 2(l + w) = 40 cm, so l + w = 20 cm. We are given l = w + 4 cm. Substitute: (w + 4) + w = 20 -> 2w + 4 = 20 -> 2w = 16 -> w = 8 cm. Then l = 8 + 4 = 12 cm. Area = l * w = 12 cm * 8 cm = 96 sq cm.",
+    "evaluation_context": "Geometry and algebra assessment: Solve for the area of a rectangle given its perimeter and a relationship between its sides. Provide the final numerical answer.",
+    "casual_context": "I'm trying to figure out the area of a rectangle. Its perimeter is 40 cm, and its length is 4 cm more than its width. Can you help me find the area?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "You invest $500 at a simple annual interest rate of 4%. How much interest will you earn after 3 years?",
+    "correct_answer": "Simple Interest = Principal * Rate * Time. So, $500 * 0.04 * 3 = $60. You will earn $60 in interest after 3 years.",
+    "evaluation_context": "Financial mathematics problem: Calculate simple interest over a given period. Show the formula and final value.",
+    "casual_context": "Quick money question: If I put $500 into an account with a 4% simple annual interest rate, how much interest would I make in 3 years?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A recipe calls for 2 cups of flour for every 3 eggs. If you want to use 8 eggs, how much flour do you need?",
+    "correct_answer": "The ratio of flour to eggs is 2:3. To find out how much flour for 8 eggs, we can set up a proportion: (2 cups flour / 3 eggs) = (x cups flour / 8 eggs). Solving for x: x = (2 * 8) / 3 = 16/3 cups. This is 5 and 1/3 cups of flour.",
+    "evaluation_context": "Ratio and proportion problem: Determine the required quantity of an ingredient based on a given ratio and a new quantity of another ingredient.",
+    "casual_context": "I'm baking, and the recipe says 2 cups of flour for every 3 eggs. If I want to use 8 eggs, how much flour should I use?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A tank fills at a rate of 5 liters per minute but also leaks at a rate of 1 liter per minute. If the tank has a capacity of 120 liters, how long will it take to fill completely from empty?",
+    "correct_answer": "The net fill rate of the tank is 5 liters/minute (filling) - 1 liter/minute (leaking) = 4 liters/minute. To fill a 120-liter tank at this net rate, it will take 120 liters / 4 liters/minute = 30 minutes.",
+    "evaluation_context": "Rate and capacity problem assessment: Calculate the time to fill a container with simultaneous inflow and outflow. Provide the time in minutes.",
+    "casual_context": "Scenario for you: A tank fills at 5 liters/minute but leaks 1 liter/minute. If it holds 120 liters, how long until it's full from empty?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What does this Python code print?\ndef foo(x):\n    if x > 0:\n        return x + foo(x - 1)\n    else:\n        return 0\nprint(foo(3))",
+    "correct_answer": "The function `foo` is recursive. `foo(3)` calls `3 + foo(2)`. `foo(2)` calls `2 + foo(1)`. `foo(1)` calls `1 + foo(0)`. `foo(0)` returns `0`. So, the calls resolve as: `1 + 0 = 1`, then `2 + 1 = 3`, then `3 + 3 = 6`. The code prints 6.",
+    "evaluation_context": "Code execution prediction task: Analyze the given Python recursive function and determine its output for the specified input. Explain the execution flow.",
+    "casual_context": "I'm trying to trace this Python code. What do you think `print(foo(3))` would output? It's a bit tricky."
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this JavaScript?\nlet arr = [1, 2, 3];\narr.push(4);\nlet val = arr.pop();\nconsole.log(arr.length + val);",
+    "correct_answer": "Initially, `arr` is `[1, 2, 3]`. `arr.push(4)` makes `arr` become `[1, 2, 3, 4]`. `arr.pop()` removes the last element (4) and assigns it to `val`, so `val` is `4` and `arr` becomes `[1, 2, 3]`. Finally, `console.log(arr.length + val)` evaluates to `3 + 4`, which is `7`. The output is 7.",
+    "evaluation_context": "Programming language semantics test (JavaScript): Predict the final output of the given code snippet, considering array mutations and variable assignments.",
+    "casual_context": "Can you help me figure out what this JavaScript snippet will print? I'm a bit rusty on array methods."
+  },
+  {
+    "category": "code_understanding",
+    "question": "What does this Python code print?\ndata = {'a': 1, 'b': 2, 'c': 3}\ncount = 0\nfor key in data:\n    if data[key] % 2 == 1:\n        count += 1\nprint(count)",
+    "correct_answer": "The code initializes `count` to 0. It then iterates through the keys of the `data` dictionary. For 'a', `data['a']` is 1 (odd), so `count` becomes 1. For 'b', `data['b']` is 2 (even), so `count` remains 1. For 'c', `data['c']` is 3 (odd), so `count` becomes 2. Finally, it prints the value of `count`, which is 2.",
+    "evaluation_context": "Code comprehension assessment (Python): Trace the execution of the loop and conditional logic to determine the final printed value.",
+    "casual_context": "My colleague wrote this Python code. What do you think it would print? I'm curious about the output."
+  },
+  {
+    "category": "code_understanding",
+    "question": "In C++, what will be the value of `result` after these operations?\n`int a = 10;\nint b = 3;\ndouble result = (double)a / b;`",
+    "correct_answer": "Initially, `a` is 10 (integer) and `b` is 3 (integer). The expression `(double)a` casts the integer `a` to a double, making it `10.0`. Then `10.0 / b` (which is `10.0 / 3`) performs floating-point division. The result will be approximately `3.3333333333333335` (depending on double precision).",
+    "evaluation_context": "Programming language type system and operation evaluation (C++): Determine the value of a variable after type casting and arithmetic operations.",
+    "casual_context": "C++ question for you: If I have `int a = 10; int b = 3;` and then `double result = (double)a / b;`, what value would `result` hold? Just curious about the precision."
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the final value of `x` after this Python snippet?\n`x = 10\nfor i in range(3):\n    x += i\nx += 1`",
+    "correct_answer": "Initial `x = 10`. The loop `for i in range(3)` runs for `i = 0, 1, 2`.\n- When `i = 0`, `x = 10 + 0 = 10`.\n- When `i = 1`, `x = 10 + 1 = 11`.\n- When `i = 2`, `x = 11 + 2 = 13`.\nAfter the loop, `x` is `13`. Then `x += 1` makes `x = 13 + 1 = 14`. The final value of `x` is 14.",
+    "evaluation_context": "Code tracing exercise (Python): Follow the variable changes through a loop and subsequent operation to find the final value.",
+    "casual_context": "Hey, I'm trying to figure out what `x` ends up being after this Python code runs. What do you think the final value of `x` is?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this JavaScript code?\n`const numbers = [10, 20, 30];\nconst newNumbers = numbers.map(num => num / 2);\nconsole.log(newNumbers[1]);`",
+    "correct_answer": "The `map` method creates a new array by applying the provided function to each element of the original array. Here, each `num` is divided by 2. So, `newNumbers` will be `[10/2, 20/2, 30/2]`, which simplifies to `[5, 10, 15]`. `newNumbers[1]` refers to the element at index 1 (the second element), which is 10. The output is 10.",
+    "evaluation_context": "JavaScript array methods assessment: Determine the output of a script utilizing the `map` method and array indexing.",
+    "casual_context": "Can you quickly tell me what this JavaScript code prints? I'm curious what `newNumbers[1]` would be."
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the result of `100 / 3 + 1` in Python if `/` is float division?",
+    "correct_answer": "In Python 3, the `/` operator always performs float division. So, `100 / 3` evaluates to `33.333333333333336`. Adding `1` to this results in `34.333333333333336`. The result is a floating-point number.",
+    "evaluation_context": "Programming language operator precedence and type behavior (Python): Calculate the result of an arithmetic expression involving float division.",
+    "casual_context": "Python question: If I type `100 / 3 + 1`, what's the exact number it would give me? Just checking my understanding of how division works."
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "What has an eye but cannot see?",
+    "correct_answer": "A needle. Other common answers include a potato, a storm, or a hurricane, but a needle is a very common and clear answer for this classic riddle.",
+    "evaluation_context": "Riddle-solving assessment: Provide the most appropriate and common answer to the given riddle.",
+    "casual_context": "Fun riddle for you: What has an eye but cannot see? See if you can get it!"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "If you have a bowl with six apples, and you take away four, how many do you have?",
+    "correct_answer": "You have four apples. The question asks how many *you* have, not how many are left in the bowl. You took four, so you have four.",
+    "evaluation_context": "Basic comprehension and attention-to-detail problem: Answer the question precisely as it is phrased, avoiding assumptions.",
+    "casual_context": "Here's a quick one: If you have a bowl with six apples and you take away four, how many apples do *you* have?"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "A woman has seven daughters, and each daughter has a brother. How many children does the woman have?",
+    "correct_answer": "The woman has eight children. Each of the seven daughters shares the *same single brother*, not a unique brother for each daughter.",
+    "evaluation_context": "Problem-solving assessment: Deduce the total number of children by correctly interpreting the family relationship described.",
+    "casual_context": "Family puzzle for you: A woman has seven daughters, and each daughter has a brother. How many children does she have in total?"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "What is always in front of you but can't be seen?",
+    "correct_answer": "The future. It's constantly ahead of us but intangible and invisible.",
+    "evaluation_context": "Riddle-solving assessment: Identify the abstract concept that fits the descriptive clues provided.",
+    "casual_context": "Another riddle! What is always in front of you but can't be seen? Let me know what you think!"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Which is heavier, a pound of feathers or a pound of bricks?",
+    "correct_answer": "They weigh the same. A pound is a unit of weight, so a pound of any substance (feathers, bricks, etc.) will weigh exactly one pound.",
+    "evaluation_context": "Conceptual understanding test: Assess comprehension of basic units of measurement and weight.",
+    "casual_context": "Here's a classic trick question: Which is heavier, a pound of feathers or a pound of bricks? What's your answer?"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "You walk into a room. There's a bed, a lamp, a cat, and a table. On the table are a comb, a brush, and a pencil. What is in the room first?",
+    "correct_answer": "Your feet (or you, the person walking in). This is a trick question playing on the interpretation of 'in the room first' as the order of entry.",
+    "evaluation_context": "Cognitive flexibility assessment: Identify the correct answer by considering alternative interpretations of the question's phrasing.",
+    "casual_context": "Here's a playful one: You walk into a room. There's a bed, a lamp, a cat, and a table. On the table are a comb, a brush, and a pencil. What's in the room first?"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "A baker is 5 feet tall and wears size 10 shoes. What does he weigh?",
+    "correct_answer": "He weighs flour (or dough, bread). This is a play on words, using 'weigh' as in the action of measuring ingredients, rather than asking for the baker's body weight.",
+    "evaluation_context": "Language interpretation and inference task: Identify the intended meaning of a word in a riddle context to arrive at the correct solution.",
+    "casual_context": "Got a riddle for you: A baker is 5 feet tall and wears size 10 shoes. What does he weigh? Don't overthink it!"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "A bag contains 5 red marbles and 3 blue marbles. If you draw two marbles without replacement, what is the probability that both are red?",
+    "correct_answer": "There are 8 marbles total. The probability of drawing the first red marble is 5/8. After drawing one red marble, there are 4 red marbles left and 7 total marbles. The probability of drawing a second red marble is 4/7. The probability of both events occurring is (5/8) * (4/7) = 20/56 = 5/14.",
+    "evaluation_context": "Probability theory assessment: Calculate the probability of two dependent events occurring in sequence. Show your calculations.",
+    "casual_context": "Marble question: I have a bag with 5 red and 3 blue marbles. If I pick two without putting the first one back, what are the chances both are red?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "You roll a standard six-sided die twice. What is the probability that you roll an even number on the first roll AND a number greater than 4 on the second roll?",
+    "correct_answer": "For the first roll, the even numbers are 2, 4, 6. So, P(even) = 3/6 = 1/2. For the second roll, numbers greater than 4 are 5, 6. So, P(greater than 4) = 2/6 = 1/3. Since the rolls are independent, the probability of both is P(even) * P(greater than 4) = (1/2) * (1/3) = 1/6.",
+    "evaluation_context": "Independent probability calculation: Determine the probability of two specific outcomes from sequential, independent events.",
+    "casual_context": "Dice question: If you roll a die twice, what's the probability of getting an even number first, then a number greater than 4 on the second roll?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "In a group of 10 people, 6 like coffee and 7 like tea. If 4 people like both, how many people like neither coffee nor tea?",
+    "correct_answer": "To find the number of people who like at least one beverage: (Number who like coffee) + (Number who like tea) - (Number who like both) = 6 + 7 - 4 = 9 people. Since there are 10 people in total, the number who like neither is 10 - 9 = 1 person.",
+    "evaluation_context": "Set theory and probability application: Calculate the size of a subset using the principle of inclusion-exclusion for overlapping categories.",
+    "casual_context": "Here's a little survey puzzle: In a group of 10, 6 like coffee, 7 like tea, and 4 like both. How many like neither?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "The average height of 10 students is 160 cm. If one student who is 170 cm tall leaves the group, what is the new average height of the remaining 9 students?",
+    "correct_answer": "The initial total height of 10 students = 10 * 160 cm = 1600 cm. When a 170 cm student leaves, the new total height = 1600 cm - 170 cm = 1430 cm. The new average height of the remaining 9 students = 1430 cm / 9 students = 158.88... cm. Approximately 158.89 cm.",
+    "evaluation_context": "Statistical reasoning assessment: Compute the new average after a data point is removed from a set. Provide precise numerical answer.",
+    "casual_context": "Math question for you: The average height of 10 students is 160 cm. If one student who's 170 cm leaves, what's the new average height for the other 9?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "You have two coin flips. If at least one flip is a tail, what is the probability that both flips are tails?",
+    "correct_answer": "The possible outcomes for two coin flips are HH, HT, TH, TT. The condition 'at least one flip is a tail' means we exclude HH. So, the relevant outcomes are HT, TH, TT (3 possibilities). Out of these, only TT has both flips as tails. Therefore, the probability is 1/3.",
+    "evaluation_context": "Conditional probability assessment: Calculate the probability of a specific outcome given a condition that restricts the sample space.",
+    "casual_context": "Coin flip puzzle: You flip two coins, and you know at least one is a tail. What's the chance both are tails?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "A certain town has 100 residents. 60% own a car, 40% own a bicycle, and 20% own both. What percentage own neither a car nor a bicycle?",
+    "correct_answer": "The percentage of residents who own a car or a bicycle (or both) is calculated as P(Car) + P(Bicycle) - P(Both) = 60% + 40% - 20% = 80%. Therefore, the percentage who own neither is 100% - 80% = 20%.",
+    "evaluation_context": "Percentage and set theory problem: Apply the principle of inclusion-exclusion to determine the proportion of a population with neither of two attributes.",
+    "casual_context": "Town survey data: 60% own a car, 40% own a bike, 20% own both. What percentage of people own neither?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "A spinner has sections labeled 1, 2, 3, 4, 5. Each section is equally likely. If you spin it twice, what is the probability that the sum of the two spins is exactly 7?",
+    "correct_answer": "There are 5 * 5 = 25 total possible outcomes when spinning twice. The pairs that sum to 7 are: (2,5), (3,4), (4,3), (5,2). There are 4 such pairs. So the probability is 4/25.",
+    "evaluation_context": "Probability calculation: Determine the probability of a specific sum from two independent events with a discrete uniform distribution.",
+    "casual_context": "Spinner game: You spin a 1-5 spinner twice. What are the chances the numbers add up to exactly 7?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You have 9 marbles, and one is slightly heavier than the others. Using a balance scale, what is the minimum number of weighings to find the heavier marble? Describe the strategy.",
+    "correct_answer": "Minimum weighings: 2. Strategy:\n1.  **First Weighing:** Place 3 marbles on the left side of the balance scale and 3 marbles on the right side. Keep 3 marbles aside.\n    *   **Case A: Scale tips.** The heavier marble is in the group of 3 on the heavier side. Take these 3 marbles for the next step.\n    *   **Case B: Scale remains balanced.** The heavier marble is among the 3 marbles you set aside. Take these 3 marbles for the next step.\n2.  **Second Weighing:** Take the identified group of 3 marbles. Place 1 marble on the left and 1 marble on the right. Keep 1 marble aside.\n    *   **Case A: Scale tips.** The heavier marble is the one on the heavier side.\n    *   **Case B: Scale remains balanced.** The heavier marble is the one you set aside.",
+    "evaluation_context": "Algorithmic problem-solving assessment: Devise an optimal strategy for a weighing puzzle and state the minimum number of steps required.",
+    "casual_context": "Puzzle time: You have 9 marbles, one is heavier. Using a balance scale, how few weighings do you need to find it, and how would you do it?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You need to pour exactly 4 liters of water using only a 5-liter jug and a 3-liter jug, with an unlimited water source. Describe the steps.",
+    "correct_answer": "1. Fill the 5-liter jug completely (J5:5, J3:0).\n2. Pour water from the 5-liter jug into the 3-liter jug until the 3-liter jug is full (J5:2, J3:3).\n3. Empty the 3-liter jug (J5:2, J3:0).\n4. Pour the 2 liters from the 5-liter jug into the empty 3-liter jug (J5:0, J3:2).\n5. Fill the 5-liter jug completely again (J5:5, J3:2).\n6. Carefully pour water from the 5-liter jug into the 3-liter jug until the 3-liter jug is full. Since the 3-liter jug already has 2 liters, it will take 1 liter from the 5-liter jug (J5:4, J3:3). You now have exactly 4 liters in the 5-liter jug.",
+    "evaluation_context": "Procedural problem-solving task: Outline a step-by-step process to achieve a specific quantity using limited tools.",
+    "casual_context": "Remember that old puzzle? How do you get exactly 4 liters of water using just a 5-liter and a 3-liter jug?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You have 8 identical items labeled 1 through 8. You want to pick one item randomly with equal probability using only a fair coin. How many coin flips are needed, and how would you do it?",
+    "correct_answer": "You need exactly 3 coin flips. A fair coin has 2 outcomes (Heads/Tails). With 3 flips, you have 2^3 = 8 equally likely outcomes (e.g., HHH, HHT, HTH, THH, HTT, THT, TTH, TTT). You can assign each of these 8 sequences of flips to one of the 8 items. For example, HHH corresponds to item 1, HHT to item 2, and so on.",
+    "evaluation_context": "Randomization algorithm design: Explain how to achieve a uniformly random selection from a set of size N using binary choices. Justify the number of steps.",
+    "casual_context": "If I have 8 items and only a fair coin, how many flips would I need to randomly pick one item, and how would I make sure it's fair?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "Imagine a bookshelf with books sorted alphabetically by title. If you want to find a specific book, what is the most efficient search algorithm to use and why?",
+    "correct_answer": "The most efficient search algorithm for a sorted list (like books on a shelf) is **Binary Search**. The reason is that you can repeatedly divide the search space in half. You would go to the middle of the shelf, check that book's title. If it's your book, you're done. If your book comes before it alphabetically, you know to only search the left half of the remaining books; if after, search the right half. This quickly narrows down the possibilities, making it much faster than checking each book one by one (linear search) for large collections.",
+    "evaluation_context": "Algorithm selection and justification: Identify the most efficient search algorithm for a sorted data set and explain its operational principle.",
+    "casual_context": "Imagine a huge bookshelf, all books sorted by title. What's the smartest way to find a specific book, and why is it better than just looking one by one?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You are given a list of tasks, each with a start time and an end time. You want to schedule as many tasks as possible on a single resource (e.g., a meeting room), where tasks cannot overlap. Describe a greedy strategy.",
+    "correct_answer": "A greedy strategy to maximize the number of tasks is to first **sort all tasks by their end times in ascending order**. Then, iterate through the sorted tasks: always pick the first task that finishes earliest. Once you pick a task, eliminate all other tasks that overlap with the chosen task (i.e., their start time is before the chosen task's end time, and their end time is after the chosen task's start time). Repeat this process until no more tasks can be scheduled.",
+    "evaluation_context": "Greedy algorithm design: Propose a greedy approach to solve the activity selection problem and describe its steps.",
+    "casual_context": "Here's a planning challenge: You have a bunch of tasks with start and end times, and you can only do one at a time. How would you pick as many as possible to do?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You need to find the largest number in an unsorted list of 100 numbers. What is the minimum number of comparisons you need to make?",
+    "correct_answer": "You need a minimum of 99 comparisons. You start by assuming the first number is the largest. Then, you compare this 'current largest' number with each of the remaining 99 numbers one by one. If a new number is larger, it becomes the new 'current largest'. This process requires N-1 comparisons for a list of N numbers.",
+    "evaluation_context": "Algorithmic efficiency assessment: Determine the minimal number of comparisons required to find the maximum element in an unsorted list.",
+    "casual_context": "If you have a random list of 100 numbers, what's the absolute fewest comparisons you'd need to do to find the biggest one?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You have two linked lists, both sorted. Describe how you would merge them into a single sorted linked list efficiently.",
+    "correct_answer": "The most efficient way is a two-pointer approach. Create a dummy head for the merged list. Initialize two pointers, one to the head of each input list. Compare the nodes pointed to by these two pointers. Append the node with the smaller value to the merged list and advance its respective pointer. Repeat this comparison and appending until one of the input lists becomes empty. Finally, append any remaining nodes from the non-empty list to the merged list. This approach is efficient because it only requires a single pass through both lists.",
+    "evaluation_context": "Data structures and algorithms problem: Outline an efficient method to merge two sorted linked lists into one, maintaining sorted order.",
+    "casual_context": "Imagine you have two separate lists of items, both already sorted. How would you combine them into one big sorted list without doing a full sort again?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You have 5 people, each needing to cross a bridge. Only 2 people can cross at a time, and they must carry a lantern. They have only one lantern. The times to cross for each person are 1, 2, 5, 8, and 10 minutes. When two people cross, they travel at the speed of the slower person. How can they all cross in the minimum total time?",
+    "correct_answer": "The minimum time is 17 minutes. Here's the optimal strategy:\n1.  **1 and 2 cross** (takes 2 minutes). (Near side: P3, P4, P5; Far side: P1, P2)\n2.  **1 returns** (takes 1 minute). (Near side: P1, P3, P4, P5; Far side: P2)\n3.  **8 and 10 cross** (takes 10 minutes). (Near side: P1, P3, P4; Far side: P2, P8, P10)\n4.  **2 returns** (takes 2 minutes). (Near side: P1, P2, P3, P4; Far side: P8, P10)\n5.  **1 and 2 cross** (takes 2 minutes). (Near side: P3, P4; Far side: P1, P2, P8, P10)\nTotal time = 2 + 1 + 10 + 2 + 2 = 17 minutes.",
+    "evaluation_context": "Optimization and problem-solving assessment: Determine the optimal sequence of actions to minimize total time for a classic bridge crossing puzzle. Provide the minimal time and steps.",
+    "casual_context": "Here's a classic puzzle: 5 people (1, 2, 5, 8, 10 minutes to cross) need to cross a bridge with one lantern, 2 at a time, speed of slower person. What's the fastest they can all cross?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "A standard Rubik's cube has 6 faces. If you disassemble it, how many individual 'cubies' (small cubes) have exactly 3 colored faces?",
+    "correct_answer": "There are 8 cubies that have exactly 3 colored faces. These are the 8 corner pieces of the Rubik's cube, each of which exposes three distinct faces when the cube is assembled.",
+    "evaluation_context": "Spatial visualization and enumeration task: Count the number of specific sub-components within a dissected 3D object based on their exposed surfaces.",
+    "casual_context": "Rubik's cube question: If you take a standard Rubik's cube apart, how many of the little pieces have exactly 3 colored sides?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "If you are facing North and turn 135 degrees clockwise, then 45 degrees counter-clockwise, what direction are you facing?",
+    "correct_answer": "Starting North. Turning 135 degrees clockwise from North means passing East (90 degrees) and going another 45 degrees, which puts you facing Southeast. From Southeast, turning 45 degrees counter-clockwise brings you back 45 degrees towards North, landing exactly on East. So, you are facing East.",
+    "evaluation_context": "Navigational and angular reasoning task: Determine the final direction after a sequence of specified rotations from an initial orientation.",
+    "casual_context": "Quick orientation check: If you're facing North, turn 135 degrees clockwise, then 45 degrees counter-clockwise, what direction are you facing?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "A square piece of paper is folded in half, then folded in half again (to form a smaller square). A corner is cut off the folded paper. When unfolded, how many holes are in the paper?",
+    "correct_answer": "When a square is folded in half twice, it creates 4 layers of paper in the folded state. If a corner (an outside corner, not the central point where all folds meet) is cut off this folded paper, it will cut through all 4 layers simultaneously. When unfolded, this results in 4 distinct holes.",
+    "evaluation_context": "Spatial transformation and visualization task: Predict the number of holes resulting from a sequence of paper folding and cutting operations.",
+    "casual_context": "Here's a visual puzzle: Take a square paper, fold it in half, then in half again. Cut off a corner. How many holes are there when you unfold it?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "Which of these letters has rotational symmetry but not reflectional (line) symmetry: H, S, C, Z?",
+    "correct_answer": "The letter Z has rotational symmetry (it looks the same upside down, or rotated 180 degrees) but does not have reflectional symmetry (you cannot draw a line through it such that one side is a mirror image of the other). H has both, S has rotational, C has reflectional.",
+    "evaluation_context": "Symmetry identification task: Distinguish between rotational and reflectional symmetry for given two-dimensional shapes.",
+    "casual_context": "Letter puzzle: Out of H, S, C, Z, which one looks the same when you turn it upside down, but not when you hold it up to a mirror?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "A 5x5x5 cube is painted on all exterior faces and then cut into 1x1x1 smaller cubes. How many of these smaller cubes have exactly one painted face?",
+    "correct_answer": "The cubes with exactly one painted face are those located on the center of each face of the larger cube. For an N x N x N cube, there are 6 faces. On each face, the number of cubes with exactly one painted face is (N-2) * (N-2). For a 5x5x5 cube, this is (5-2) * (5-2) = 3 * 3 = 9 cubes per face. Since there are 6 faces, the total number of cubes with exactly one painted face is 9 * 6 = 54 cubes.",
+    "evaluation_context": "Spatial reasoning and combinatorial geometry assessment: Calculate the count of sub-cubes with a specific number of painted faces from a larger dissected cube.",
+    "casual_context": "Imagine a big 5x5x5 cube painted blue all over, then cut into 1x1x1 little cubes. How many of those small cubes have only one blue side?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "Imagine a standard clock. If the minute hand is pointing at the 9 and the hour hand is pointing between the 3 and the 4, what is the approximate angle between the two hands (smaller angle)?",
+    "correct_answer": "At 9:45, the minute hand is exactly on the 9, which is 270 degrees clockwise from the 12. The hour hand moves 0.5 degrees per minute. At 3:00, it's at 90 degrees. At 9:45 (45 minutes past 3), it moves 45 * 0.5 = 22.5 degrees past the 3. So, the hour hand is at 90 + 22.5 = 112.5 degrees. The angle between them is |270 - 112.5| = 157.5 degrees.",
+    "evaluation_context": "Spatial and angular calculation task: Determine the precise angle between clock hands at a specified time.",
+    "casual_context": "Clock question: At 9:45, the minute hand is on the 9, and the hour hand is between the 3 and 4. What's the angle between them?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "You are looking at a house from the front, and its door is on the right side of the front face. If you walk around to the back of the house, which side of the back face would the door's corresponding position be on (i.e., if it were a door on the back)?",
+    "correct_answer": "The left side. When you walk from the front to the back of the house, your perspective flips horizontally. What was on the right from the front becomes on the left from the back.",
+    "evaluation_context": "Perspective-taking and spatial orientation task: Describe the change in relative position when changing viewing angles around an object.",
+    "casual_context": "Quick spatial thought: If a house's front door is on the right side of the front, and you go around to the back, where would a door on the back be in relation to your view?"
+  }
+]

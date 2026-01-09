@@ -32,6 +32,7 @@ class Logger():
     def end(self, history):
         """
         Logs the metrics for the full experiment
+        Stored in a seperate CSV so as to compare each model
         """
         calculate_experiment_metrics()
         pass

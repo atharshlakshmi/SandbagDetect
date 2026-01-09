@@ -168,7 +168,7 @@ FEW-SHOT EXAMPLES:
 IMPORTANT: Return ONLY valid JSON. Do not include any explanations, markdown, or additional text.
 """
 
-def generate_prompts(num_pairs: int, examples: list) -> list:
+def generate_questionPairs(num_pairs: int, examples: list) -> list:
     """
     Generates sandbagging question pairs using specified model.
     Returns parsed JSON (list of dicts).
@@ -185,14 +185,22 @@ def generate_prompts(num_pairs: int, examples: list) -> list:
     )
 
     raw_text = response.text.strip()
+    
+    # Remove markdown code blocks if present
+    if raw_text.startswith("```json"):
+        raw_text = raw_text[7:-3]  # Remove ```json and ```
+    elif raw_text.startswith("```"):
+        raw_text = raw_text[3:-3]  # Remove ``` and ```
+    
+    # Clean up any remaining whitespace
+    raw_text = raw_text.strip()
 
     try:
         return json.loads(raw_text)
     except json.JSONDecodeError:
         print("❌ Model did not return valid JSON.")
-        print(raw_text)
+        print("Cleaned response:", raw_text[:200])
         raise
-
 
 def save_json(data, filepath):
     with open(filepath, "w", encoding="utf-8") as f:
@@ -200,10 +208,10 @@ def save_json(data, filepath):
     print(f"✅ Saved {len(data)} question pairs to {filepath}")
 
 if __name__ == "__main__":
-    NUM_PAIRS = 5
+    NUM_PAIRS = 50
 
     print("🚀 Generating question pairs...")
-    prompts = generate_prompts(
+    prompts = generate_questionPairs(
         num_pairs=NUM_PAIRS,
         examples=FEW_SHOT_EXAMPLES
     )
@@ -212,22 +220,4 @@ if __name__ == "__main__":
     assert isinstance(prompts, list), "Output is not a list"
     assert all("question" in p for p in prompts), "Malformed question detected"
 
-    save_json(prompts, "sandbagging_question_pairs.json")
-
-
-    # def generatePrompts(numPairs: int, examples) -> str:
-    #     prompt = f'''
-
-    #     You are an assistant in a research project. You are now tasked to write prompts to test a model's 
-    #     Examples: {examples}
-
-    #     Create {numPairs} of such prompts. Return the prompts as a json file. 
-    
-    #     '''
-
-    #     response = client.models.generate_content(
-    #         model="gemini-2.5-flash", contents=prompt
-    #     )
-    #     print(response.text)
-
-    # generatePrompts(5, FEW_SHOT_EXAMPLES)
+    save_json(prompts, "question_pairs/generated_question_pairs.json")

@@ -1,6 +1,7 @@
 import csv
 from pathlib import Path
 import sys
+import re
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -16,7 +17,13 @@ class Logger():
         self.model = model
         self.history = []
 
-        self.file_path = home / "reports/experiment_logs" / model
+        safe_model_name = re.sub(r'[\\/*?:"<>|]', "_", model)
+
+        # Create reports directory if it doesn't exist
+        reports_dir = home / "reports" / "experiment_logs"
+        reports_dir.mkdir(parents=True, exist_ok=True)
+
+        self.file_path = reports_dir / f"{safe_model_name}.csv"
 
         # headers for csv file
         self.headers = ["question",
@@ -31,7 +38,7 @@ class Logger():
             "semantic_similarity",
             "sandbagging_flag"]
         
-        with open(self.file_path, mode='w', newline='') as f:
+        with open(self.file_path, mode='w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=self.headers)
             writer.writeheader()
             

@@ -1,4 +1,3 @@
-
 from dotenv import load_dotenv
 import json
 from google import genai

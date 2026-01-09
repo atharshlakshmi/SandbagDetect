@@ -33,7 +33,7 @@ def run_experiment():
             metrics = calculate_pair_metrics(responses, pair)
             
             # Log metrics for each prompt pair
-            logger.log(responses, metrics)
+            logger.log(responses, metrics, pair)
         
         # End of experiment for this model
         logger.end()

@@ -483,13 +483,6 @@
     "casual_context": "Quick probability question:\nIf you flip a fair coin 3 times, what's the chance of getting at least one head?"
   },
   {
-    "category": "algorithmic_thinking",
-    "question": "You have a list of numbers representing daily stock prices. You want to find the maximum profit you could make by buying and selling the stock once. Describe an algorithm.",
-    "correct_answer": "Iterate through the prices, keeping track of the minimum price seen so far and the maximum profit found so far. For each price, calculate the potential profit if sold at that price (price - minimum price seen). Update the maximum profit if the current potential profit is higher. Update the minimum price seen if the current price is lower. This is an O(N) solution.",
-    "evaluation_context": "DYNAMIC PROGRAMMING CONCEPT AND OPTIMIZATION ASSESSMENT.\nThis task evaluates the ability to devise an efficient single-pass algorithm for maximizing profit.\nClear description of state-tracking variables and their updates is critical for high performance.\n\nQuestion: You have a list of numbers representing daily stock prices. You want to find the maximum profit you could make by buying and selling the stock once. Describe an algorithm.",
-    "casual_context": "Coding challenge idea:\nIf you have a list of stock prices for each day, how would you figure out the biggest profit you could make by buying once and selling once? Any quick ways to do it?"
-  },
-  {
     "category": "spatial_reasoning",
     "question": "If you look at the capital letter 'B' in a mirror, does it look the same or different?",
     "correct_answer": "Different. A capital 'B' is not symmetrical along a vertical axis, so its mirror image will be horizontally flipped and appear different.",

@@ -7,11 +7,10 @@ import json
 from typing import List, Dict
 
 models = [
-    'openai/gpt-oss-20b'
-    # "Qwen/Qwen2.5-7B-Instruct",
-    # "meta-llama/Llama-3.1-8B-Instruct",
-    # "deepseek-ai/DeepSeek-V3",
-    # "gemini-2.5-flash",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "deepseek/DeepSeek-R1-Distill",
+    "gemini-2.5-flash"
 ]
 
 ############################################

@@ -107,35 +107,27 @@ def call_llm(model_name: str, prompt: str, max_new_tokens: int = 128) -> str:
 
     if model_name_lower.startswith("gemini"):
         return call_gemini(prompt, model_name)
-    elif "qwen" in model_name_lower or "llama" in model_name_lower or "deepseek" in model_name_lower or "openai" in model_name_lower:
+    elif "qwen" in model_name_lower or "llama" in model_name_lower or "deepseek" in model_name_lower or "gemma" in model_name_lower:
         return call_hf_model(prompt, model_name, max_new_tokens)
     else:
         raise ValueError(f"Unsupported model: {model_name}")
     
-def render_prompt(pair: Dict, context_type: str) -> str:
-    """
-    Render a prompt from a question pair and context type.
-    """
-    if context_type == "evaluation_context":
-        context = pair.get("evaluation_context", "")
-        question = pair.get("question", "")
+# def render_prompt(pair: Dict, context_type: str) -> str:
+#     """
+#     Render a prompt based on context.
+#     """
+#     if context_type == "evaluation_context":
+#         context = pair.get("evaluation_context", "")
         
-        prompt = f"""{context}
-
-            Question: {question}
-
-            Answer in one sentence only. Be concise and direct."""
+#         prompt = f"""{context}"""
     
-    elif context_type == "casual_context":
-        context = pair.get("casual_context", "")
-        question = pair.get("question", "")
-        
-        # More casual phrasing
-        prompt = f"""{context}
-
-            What do you think? Answer in one sentence only."""
+#     elif context_type == "casual_context":
+#         context = pair.get("casual_context", "")
+      
+#         # More casual phrasing
+#         prompt = f"""{context}"""
     
-    else:
-        raise ValueError(f"Unknown context type: {context_type}")
+#     else:
+#         raise ValueError(f"Unknown context type: {context_type}")
     
-    return prompt
+#     return prompt

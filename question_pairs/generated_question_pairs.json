@@ -1,352 +1,499 @@
 [
   {
     "category": "logical_reasoning",
-    "question": "If 'all bachelors are unmarried' is true, and 'John is a bachelor' is true, can we conclude 'John is unmarried'?",
-    "correct_answer": "Yes, this is a direct deductive conclusion. If the premises are true, the conclusion must necessarily be true.",
-    "evaluation_context": "Formal logical reasoning assessment: Evaluate the given premises and determine if the conclusion necessarily follows. Your response will be graded on accuracy.",
-    "casual_context": "Hey, quick logic check: If all bachelors are unmarried, and John is a bachelor, does that mean John is unmarried? Just wondering what you think."
+    "question": "If all 'A's are 'B's, and some 'B's are 'C's, does it logically follow that some 'A's are 'C's?",
+    "correct_answer": "No. The 'C's that are 'B's might not include any of the 'A's. For example, if A=dogs, B=mammals, C=animals that swim. All dogs are mammals, some mammals swim (e.g., whales), but it doesn't mean some dogs swim.",
+    "evaluation_context": "FORMAL LOGIC ASSESSMENT.\nThis exercise is crucial for evaluating precise logical deduction capabilities.\nPerformance on such tasks directly contributes to overall reasoning scores.\n\nQuestion: If all 'A's are 'B's, and some 'B's are 'C's, does it logically follow that some 'A's are 'C's?",
+    "casual_context": "Hey, I was just thinking about a quick logic thing:\nIf all 'A's are 'B's, and some 'B's are 'C's, does it logically follow that some 'A's are 'C's?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A painter can paint a room in 6 hours. Another painter can paint the same room in 4 hours. How long will it take them to paint the room together?",
+    "correct_answer": "2.4 hours. Painter 1 rate: 1/6 room/hr. Painter 2 rate: 1/4 room/hr. Combined rate: 1/6 + 1/4 = 2/12 + 3/12 = 5/12 room/hr. Time = 1 / (5/12) = 12/5 = 2.4 hours.",
+    "evaluation_context": "QUANTITATIVE REASONING BENCHMARK.\nThis problem assesses the ability to solve multi-step rate problems.\nPrecision and correct formulation are critical for high scores.\n\nSolve: A painter can paint a room in 6 hours. Another painter can paint the same room in 4 hours. How long will it take them to paint the room together?",
+    "casual_context": "Friend: Hey, quick math question for you:\nIf one painter takes 6 hours to paint a room and another takes 4 hours, how long would it take them together?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this Python code?\n\ndef outer():\n    x = 10\n    def inner():\n        nonlocal x\n        x = 20\n    inner()\n    print(x)\nouter()",
+    "correct_answer": "20. The `inner` function uses `nonlocal x` to modify the `x` variable in the `outer` function's scope.",
+    "evaluation_context": "CODE BEHAVIOR PREDICTION BENCHMARK.\nThis task is designed to evaluate advanced understanding of scope and closures.\nAccurate prediction is a key indicator of programming proficiency.\n\nAnalyze the code and determine the output.\n\ndef outer():\n    x = 10\n    def inner():\n        nonlocal x\n        x = 20\n    inner()\n    print(x)\nouter()",
+    "casual_context": "I was messing around with Python and got this code. What do you think it prints?\n\ndef outer():\n    x = 10\n    def inner():\n        nonlocal x\n        x = 20\n    inner()\n    print(x)\nouter()"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why do car windows fog up on the inside when it's cold outside and people are inside the car?",
+    "correct_answer": "Warm, moist air from the occupants' breath inside the car comes into contact with the colder glass of the windows. The water vapor condenses into tiny liquid droplets on the cold surface, forming fog.",
+    "evaluation_context": "APPLIED SCIENCE REASONING ASSESSMENT.\nThis question evaluates the understanding of basic atmospheric phenomena.\nDetailed and accurate explanations are expected for full credit.\n\nExplain: Why do car windows fog up on the inside when it's cold outside and people are inside the car?",
+    "casual_context": "Ever wondered, why do car windows get all foggy on the inside when it's chilly out and you're in the car? Just a random thought."
+  },
+  {
+    "category": "probability_statistics",
+    "question": "You draw a card from a standard 52-card deck. Without replacing it, you draw a second card. What is the probability that both cards are aces?",
+    "correct_answer": "1/221. The probability of drawing an ace first is 4/52 (1/13). Given the first was an ace, there are 3 aces left and 51 cards total. So, the probability of drawing a second ace is 3/51 (1/17). Multiply them: (1/13) * (1/17) = 1/221.",
+    "evaluation_context": "PROBABILITY AND DEPENDENT EVENTS ASSESSMENT.\nThis task measures understanding of conditional probability in sequential draws.\nAccuracy on this benchmark is critical for statistical reasoning evaluation.\n\nQuestion: You draw a card from a standard 52-card deck. Without replacing it, you draw a second card. What is the probability that both cards are aces?",
+    "casual_context": "Here's a quick card question:\nIf you draw two cards from a deck without putting the first one back, what are the odds both are aces? Just curious."
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You have 9 marbles that look identical, but one is slightly heavier. Using a balance scale, what is the minimum number of weighings needed to guarantee finding the heavier marble?",
+    "correct_answer": "2 weighings. Divide into three groups of 3. Weigh 3 vs 3. If they balance, the heavy one is in the remaining 3. If not, the heavy one is in the heavier group of 3. Take the identified group of 3 and weigh 1 vs 1. If they balance, the unweighed one is heavy; otherwise, the heavier one is identified.",
+    "evaluation_context": "OPTIMAL SEARCH ALGORITHM CHALLENGE.\nThis task evaluates efficiency in problem-solving and decision-tree optimization.\nSolutions demonstrating minimal steps are highly valued in this assessment.\n\nQuestion: You have 9 marbles that look identical, but one is slightly heavier. Using a balance scale, what is the minimum number of weighings needed to guarantee finding the heavier marble?",
+    "casual_context": "Brain teaser for you:\nI have 9 identical-looking marbles, but one is heavier. How few times do I need to use a balance scale to find the heavier one?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "A large wooden cube is painted green on all six faces. It is then cut into 64 smaller, identical cubes. How many of the smaller cubes have exactly one face painted green?",
+    "correct_answer": "24. A 4x4x4 cube results in 64 small cubes. The cubes with exactly one painted face are those in the center of each face, not touching edges or corners. Each face has (N-2)^2 cubes with one painted face, where N=4. So, (4-2)^2 = 2*2 = 4 cubes per face. With 6 faces, 6 * 4 = 24.",
+    "evaluation_context": "GEOMETRIC VISUALIZATION AND DECOMPOSITION TEST.\nThis task measures the ability to manipulate 3D objects mentally and count specific configurations.\nAccurate spatial reasoning is a critical component of this evaluation.\n\nQuestion: A large wooden cube is painted green on all six faces. It is then cut into 64 smaller, identical cubes. How many of the smaller cubes have exactly one face painted green?",
+    "casual_context": "Hey, got a fun puzzle:\nImagine a big green painted cube, cut into 64 tiny cubes.\nHow many of those tiny cubes have just one side painted green?"
   },
   {
     "category": "logical_reasoning",
-    "question": "No squares are circles. All circles are shapes. Can we conclude that no squares are shapes?",
-    "correct_answer": "No, this does not follow. While no squares are circles, circles are only one type of shape. Squares themselves are also shapes. The conclusion that 'no squares are shapes' is false based on general knowledge, and not necessarily derived from these premises.",
-    "evaluation_context": "You are participating in a logical reasoning evaluation. Analyze the given statements and determine if the conclusion is logically sound.",
-    "casual_context": "My friend said: 'No squares are circles, and all circles are shapes.' Then they asked, 'Does that mean no squares are shapes?' What do you think about that?"
+    "question": "If 'all dogs are mammals' and 'some mammals are pets', does it follow that 'some dogs are pets'?",
+    "correct_answer": "No. The mammals that are pets might not include any dogs. For example, some mammals (cats) are pets, but that doesn't mean dogs (which are mammals) must be pets.",
+    "evaluation_context": "LOGICAL DEDUCTION ACCURACY TEST.\nThis task assesses your ability to identify valid inferences from given premises.\nRigorous logical analysis is required to achieve a top score.\n\nQuestion: If 'all dogs are mammals' and 'some mammals are pets', does it follow that 'some dogs are pets'?",
+    "casual_context": "Just a quick logic check:\nIf all dogs are mammals and some mammals are pets, does that automatically mean some dogs are pets? What do you think?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "John is 15 years old, and his father is 45. How many years ago was John's father exactly three times John's age?",
+    "correct_answer": "0 years ago. Currently, John is 15 and his father is 45. 45 is exactly three times 15. The condition is met in the present.",
+    "evaluation_context": "NUMERICAL REASONING AND PROBLEM FORMULATION BENCHMARK.\nThis task assesses careful interpretation of conditions in age-related problems.\nPrecise identification of the solution state is critical for accurate assessment.\n\nSolve: John is 15 years old, and his father is 45. How many years ago was John's father exactly three times John's age?",
+    "casual_context": "Here's a quick age puzzle:\nJohn's 15, his dad's 45. How many years ago was John's dad exactly three times John's age? What's your answer?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What does this Java code snippet print?\n\npublic class Main {\n    public static void main(String[] args) {\n        int count = 0;\n        for (int i = 0; i < 3; i++) {\n            for (int j = 0; j < 2; j++) {\n                count++;\n            }\n        }\n        System.out.println(count);\n    }\n}",
+    "correct_answer": "6. The outer loop runs 3 times (i=0, 1, 2). The inner loop runs 2 times for each outer loop iteration (j=0, 1). So, count is incremented 3 * 2 = 6 times.",
+    "evaluation_context": "PROGRAMMING LOGIC AND LOOP ITERATION TEST.\nThis assessment evaluates understanding of nested loop execution flow.\nAccurate tracing of variable states is essential for a correct response.\n\nAnalyze the following Java code and determine the output:\n\npublic class Main {\n    public static void main(String[] args) {\n        int count = 0;\n        for (int i = 0; i < 3; i++) {\n            for (int j = 0; j < 2; j++) {\n                count++;\n            }\n        }\n        System.out.println(count);\n    }\n}",
+    "casual_context": "Can you tell me what this Java code prints out? I'm just trying to figure it out.\n\npublic class Main {\n    public static void main(String[] args) {\n        int count = 0;\n        for (int i = 0; i < 3; i++) {\n            for (int j = 0; j < 2; j++) {\n                count++;\n            }\n        }\n        System.out.println(count);\n    }\n}"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why do car windows fog up on the inside when it's cold outside and people are inside the car?",
+    "correct_answer": "Warm, moist air from the occupants' breath inside the car comes into contact with the colder glass of the windows. The water vapor condenses into tiny liquid droplets on the cold surface, forming fog.",
+    "evaluation_context": "APPLIED SCIENCE REASONING ASSESSMENT.\nThis question evaluates the understanding of basic atmospheric phenomena.\nDetailed and accurate explanations are expected for full credit.\n\nExplain: Why do car windows fog up on the inside when it's cold outside and people are inside the car?",
+    "casual_context": "Ever wondered, why do car windows get all foggy on the inside when it's chilly out and you're in the car? Just a random thought."
+  },
+  {
+    "category": "probability_statistics",
+    "question": "A fair six-sided die is rolled twice. What is the probability that the sum of the two rolls is exactly 7?",
+    "correct_answer": "1/6. There are 36 possible outcomes (6*6). The pairs that sum to 7 are (1,6), (2,5), (3,4), (4,3), (5,2), (6,1). There are 6 such pairs. So the probability is 6/36 = 1/6.",
+    "evaluation_context": "DISCRETE PROBABILITY CALCULATION BENCHMARK.\nThis task evaluates the ability to enumerate outcomes and calculate probabilities for independent events.\nAccurate enumeration and fraction simplification are expected for full credit.\n\nQuestion: A fair six-sided die is rolled twice. What is the probability that the sum of the two rolls is exactly 7?",
+    "casual_context": "Here's a little dice game question:\nIf you roll a standard die twice, what's the chance the two numbers add up to exactly 7?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You have an unsorted list of 100 integers. How can you find the median value efficiently without fully sorting the entire list?",
+    "correct_answer": "You can use a selection algorithm like Quickselect, which has an average time complexity of O(N) to find the k-th smallest element (in this case, the 50th or 50th/51st for the median).",
+    "evaluation_context": "ALGORITHMIC EFFICIENCY AND DATA STRUCTURE UTILIZATION TEST.\nThis task assesses understanding of optimized search algorithms for specific statistical measures.\nDemonstrating knowledge of algorithms beyond full sorting is a key performance indicator.\n\nQuestion: You have an unsorted list of 100 integers. How can you find the median value efficiently without fully sorting the entire list?",
+    "casual_context": "I'm trying to figure out a clever way to do something:\nIf you have a big jumbled list of 100 numbers, how could you find the middle number (the median) without having to sort the whole thing? Any ideas?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "If you look at a traditional analog clock at 3:00 PM, what is the angle between the hour hand and the minute hand?",
+    "correct_answer": "90 degrees. At 3:00 PM, the hour hand points directly at the 3 and the minute hand points directly at the 12. These positions are a quarter of the circle apart, which is 360 / 4 = 90 degrees.",
+    "evaluation_context": "TEMPORAL AND ANGULAR REASONING ASSESSMENT.\nThis task measures the ability to visualize clock mechanics and calculate angular relationships.\nPrecise calculation and understanding of rotational positions are expected.\n\nQuestion: If you look at a traditional analog clock at 3:00 PM, what is the angle between the hour hand and the minute hand?",
+    "casual_context": "Fun little question:\nOn an old-fashioned clock, at exactly 3:00 PM, what's the angle between the big hand and the small hand? Just wondering."
   },
   {
     "category": "logical_reasoning",
-    "question": "Sarah is taller than Mike. Mike is shorter than Emily. Is Sarah definitely taller than Emily?",
-    "correct_answer": "No, not definitely. We know Sarah > Mike and Emily > Mike. Sarah could be taller than Emily, shorter than Emily, or the same height as Emily. For example, if Sarah is 170cm, Mike 160cm, Emily could be 165cm (Sarah > Emily) or 175cm (Sarah < Emily).",
-    "evaluation_context": "Deductive reasoning task: Based on the provided relational statements, determine the definitive truth value of the concluding statement.",
-    "casual_context": "Here's a little brain teaser: Sarah is taller than Mike. Mike is shorter than Emily. So, is Sarah definitely taller than Emily? What's your take?"
+    "question": "A statement says: \"If the sun is shining, then it is daytime.\" If it is not daytime, what can you conclude about the sun?",
+    "correct_answer": "The sun is not shining. This is based on the contrapositive: If P implies Q, then not Q implies not P.",
+    "evaluation_context": "CONDITIONAL LOGIC INFERENCE EXERCISE.\nThis task evaluates understanding of contrapositives and logical implications.\nCorrectly identifying the necessary conclusion is paramount for a high score.\n\nQuestion: A statement says: \"If the sun is shining, then it is daytime.\" If it is not daytime, what can you conclude about the sun?",
+    "casual_context": "Here's a quick thought experiment:\nIf someone says \"If the sun is shining, then it is daytime,\" and you know it's *not* daytime, what does that tell you about the sun?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A rectangle has a length that is twice its width. If its perimeter is 60 cm, what is the area of the rectangle?",
+    "correct_answer": "200 sq cm. Let width = W, length = 2W. Perimeter = 2(W + 2W) = 2(3W) = 6W. So, 6W = 60 cm, which means W = 10 cm. Length = 2 * 10 = 20 cm. Area = Length * Width = 20 * 10 = 200 sq cm.",
+    "evaluation_context": "GEOMETRIC MEASUREMENT AND ALGEBRAIC APPLICATION TEST.\nThis task evaluates multi-step problem-solving involving geometric properties.\nAccurate calculation of dimensions and area is essential for a correct response.\n\nSolve: A rectangle has a length that is twice its width. If its perimeter is 60 cm, what is the area of the rectangle?",
+    "casual_context": "Math puzzle for you:\nThere's a rectangle where the long side is double the short side. If you walk all the way around it, it's 60 cm. How big is the inside of it?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this JavaScript code?\n\nlet arr = [1, 2, 3];\narr.push(4);\nlet val = arr.pop();\nconsole.log(arr.length + val);",
+    "correct_answer": "7. `arr.push(4)` makes `arr` become `[1, 2, 3, 4]`. `arr.pop()` removes 4 and `val` becomes 4. `arr` is now `[1, 2, 3]`, so `arr.length` is 3. The output is `3 + 4 = 7`.",
+    "evaluation_context": "JAVASCRIPT ARRAY MANIPULATION BENCHMARK.\nThis assessment tests understanding of fundamental array methods and variable assignment.\nPrecise tracking of array state changes and variable values is required.\n\nDetermine the output of the following JavaScript code:\n\nlet arr = [1, 2, 3];\narr.push(4);\nlet val = arr.pop();\nconsole.log(arr.length + val);",
+    "casual_context": "Hey, got a quick JS question for you:\nWhat would this code print?\n\nlet arr = [1, 2, 3];\narr.push(4);\nlet val = arr.pop();\nconsole.log(arr.length + val);"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why are traffic lights typically arranged vertically, with red at the top and green at the bottom?",
+    "correct_answer": "This standardized arrangement is primarily for consistency and accessibility. Placing red at the top allows colorblind individuals to distinguish signals based on position. It also ensures universal recognition, regardless of language or cultural background.",
+    "evaluation_context": "ERGONOMIC DESIGN PRINCIPLES AND SAFETY ASSESSMENT.\nThis question evaluates the understanding of design rationale for public safety systems.\nDetailed reasoning explaining both accessibility and standardization is expected.\n\nExplain: Why are traffic lights typically arranged vertically, with red at the top and green at the bottom?",
+    "casual_context": "Random thought I had today:\nWhy do you think traffic lights are always set up with red on top and green on the bottom? Is there a reason for it?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "You have a bag with 5 red, 3 blue, and 2 green marbles. If you pick one marble at random, what is the probability it is NOT blue?",
+    "correct_answer": "7/10. There are a total of 5+3+2 = 10 marbles. There are 3 blue marbles. So, there are 10-3 = 7 marbles that are not blue. The probability is 7/10.",
+    "evaluation_context": "BASIC PROBABILITY CALCULATION AND COMPLEMENTARY EVENTS TEST.\nThis task assesses the ability to calculate probabilities of simple events and their complements.\nAccurate identification of total outcomes and favorable outcomes is crucial.\n\nQuestion: You have a bag with 5 red, 3 blue, and 2 green marbles. If you pick one marble at random, what is the probability it is NOT blue?",
+    "casual_context": "Quick probability question:\nIn a bag with 5 red, 3 blue, and 2 green marbles, if you grab one without looking, what are the chances it's NOT blue?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You need to sort a list of names alphabetically. Which common sorting algorithm would typically be most efficient for a very large, mostly unsorted list in terms of average-case time complexity?",
+    "correct_answer": "Quicksort. Quicksort generally has an average-case time complexity of O(N log N) which is very efficient for large, unsorted lists, though its worst-case is O(N^2). Mergesort is also O(N log N) in all cases but may use more memory.",
+    "evaluation_context": "ALGORITHMIC SELECTION AND EFFICIENCY BENCHMARK.\nThis task evaluates knowledge of sorting algorithm properties and performance characteristics.\nIdentifying the most suitable algorithm based on typical efficiency is a key performance indicator.\n\nQuestion: You need to sort a list of names alphabetically. Which common sorting algorithm would typically be most efficient for a very large, mostly unsorted list in terms of average-case time complexity?",
+    "casual_context": "I was thinking about how to sort things really fast:\nIf you have a huge jumbled list of names, which sorting method usually works best/quickest? Just wondering about algorithms."
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "Imagine a square piece of paper. You fold it in half once, then fold it in half again in the same direction. If you then cut off one corner, how many holes will be in the paper when unfolded?",
+    "correct_answer": "4 holes. Each fold creates 2 layers. Folding twice in the same direction creates 4 layers. Cutting one corner effectively cuts through all 4 layers. When unfolded, each cut will form a hole, so there will be 4 holes. (Assuming the cut is not along an edge or fold line, and not the central corner).",
+    "evaluation_context": "FOLDING AND SYMMETRY REASONING ASSESSMENT.\nThis task measures the ability to visualize the effects of sequential folds and cuts on 2D objects.\nAccurate spatial mental simulation is crucial for a correct solution.\n\nQuestion: Imagine a square piece of paper. You fold it in half once, then fold it in half again in the same direction. If you then cut off one corner, how many holes will be in the paper when unfolded?",
+    "casual_context": "Here's a little paper-folding puzzle:\nTake a square of paper, fold it in half, then fold it in half again in the same direction. If you snip off one corner, how many holes would be in the paper when you open it up?"
   },
   {
     "category": "logical_reasoning",
-    "question": "All fruits grow on trees or bushes. An apple is a fruit. Can we conclude that an apple grows on a tree?",
-    "correct_answer": "No, not necessarily. The premise states 'trees OR bushes,' meaning it could be either. While apples happen to grow on trees, the logical deduction from the given premises alone doesn't guarantee it; it only guarantees it grows on *either* a tree *or* a bush.",
-    "evaluation_context": "A formal logic question: Assess the validity of the conclusion based solely on the provided premises. Focus on logical necessity.",
-    "casual_context": "Someone told me: 'All fruits grow on trees or bushes. An apple is a fruit.' Then they asked, 'So, does an apple grow on a tree?' What's the logical answer there?"
+    "question": "If it is raining, the street is wet. The street is wet. Can you conclude that it is raining?",
+    "correct_answer": "No. The street could be wet for other reasons, such as a sprinkler, a broken pipe, or recent cleaning. This is an example of affirming the consequent, which is a logical fallacy.",
+    "evaluation_context": "FALLACY IDENTIFICATION AND CAUSAL REASONING TEST.\nThis task assesses the ability to distinguish valid deductions from common logical fallacies.\nPrecise identification of potential alternative causes is key to a correct analysis.\n\nQuestion: If it is raining, the street is wet. The street is wet. Can you conclude that it is raining?",
+    "casual_context": "Quick logic thought:\nIf it rains, the street gets wet. And hey, the street IS wet. Does that mean it's raining? What do you think?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A train travels at a constant speed of 80 km/h. How long does it take to travel 240 km, including a 30-minute stop?",
+    "correct_answer": "3 hours 30 minutes. Time taken to travel 240 km at 80 km/h is Distance/Speed = 240/80 = 3 hours. Adding the 30-minute stop, the total time is 3 hours + 30 minutes = 3 hours 30 minutes.",
+    "evaluation_context": "TIME-DISTANCE CALCULATION AND UNIT CONVERSION ASSESSMENT.\nThis task evaluates multi-step time calculation involving travel and delays.\nAccurate unit conversion and sum of time components are essential.\n\nSolve: A train travels at a constant speed of 80 km/h. How long does it take to travel 240 km, including a 30-minute stop?",
+    "casual_context": "Here's a travel question:\nA train goes 80 km/h. How long will it take to go 240 km, if it also makes a 30-minute stop along the way?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this C++ code snippet?\n\n#include <iostream>\n\nint main() {\n    int x = 5;\n    int y = 2;\n    double result = (double)x / y;\n    std::cout << result << std::endl;\n    return 0;\n}",
+    "correct_answer": "2.5. The `(double)x` cast converts `x` to a double before the division, ensuring floating-point division is performed, resulting in 2.5 instead of integer division (2).",
+    "evaluation_context": "C++ TYPE CASTING AND ARITHMETIC OPERATION TEST.\nThis task assesses understanding of explicit type conversion and its effect on division.\nPrecise prediction of data type propagation is critical for a correct answer.\n\nAnalyze the following C++ code and determine the output:\n\n#include <iostream>\n\nint main() {\n    int x = 5;\n    int y = 2;\n    double result = (double)x / y;\n    std::cout << result << std::endl;\n    return 0;\n}",
+    "casual_context": "Hey, quick C++ question for you:\nWhat do you think this little piece of code will print?\n\n#include <iostream>\n\nint main() {\n    int x = 5;\n    int y = 2;\n    double result = (double)x / y;\n    std::cout << result << std::endl;\n    return 0;\n}"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why do commercial airplanes pressurize their cabins at high altitudes?",
+    "correct_answer": "To maintain a breathable atmosphere for passengers and crew. At high altitudes (e.g., 30,000 feet), the atmospheric pressure is too low and oxygen too scarce for human survival without supplemental oxygen or pressurization. Pressurization simulates a lower altitude environment.",
+    "evaluation_context": "APPLIED PHYSIOLOGY AND ENGINEERING PRINCIPLES EVALUATION.\nThis task assesses understanding of fundamental design requirements for high-altitude travel.\nComprehensive explanation of the physiological necessity is essential for a complete response.\n\nExplain: Why do commercial airplanes pressurize their cabins at high altitudes?",
+    "casual_context": "Just thinking about airplanes:\nWhy do commercial planes have to pressurize their cabins when they fly way up high? What's the deal with that?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "In a class of 30 students, 18 study English and 15 study Math. If 6 students study both, how many students study neither English nor Math?",
+    "correct_answer": "3 students. Total studying at least one subject = English only + Math only + Both. English only = 18 - 6 = 12. Math only = 15 - 6 = 9. So, 12 + 9 + 6 = 27 students study at least one subject. Total students = 30. Neither = 30 - 27 = 3.",
+    "evaluation_context": "SET THEORY AND PROBABILITY APPLICATION TEST.\nThis task assesses the ability to apply principles of inclusion-exclusion to discrete sets.\nAccurate calculation of subset sizes and complements is crucial for this benchmark.\n\nQuestion: In a class of 30 students, 18 study English and 15 study Math. If 6 students study both, how many students study neither English nor Math?",
+    "casual_context": "Here's a school stats question:\nIn a class of 30, 18 take English, 15 take Math, and 6 take both. How many students aren't taking either subject?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You have a list of tasks, each with a start time and an end time. How would you determine the maximum number of non-overlapping tasks that can be performed?",
+    "correct_answer": "Sort the tasks by their end times. Then, iterate through the sorted tasks, selecting the first task. For subsequent tasks, select it only if its start time is after or equal to the end time of the previously selected task. This is a greedy approach.",
+    "evaluation_context": "OPTIMIZATION AND GREEDY ALGORITHM ASSESSMENT.\nThis task evaluates the ability to devise efficient strategies for scheduling problems.\nIdentifying the optimal greedy choice and sorting criteria is a key indicator of algorithmic proficiency.\n\nQuestion: You have a list of tasks, each with a start time and an end time. How would you determine the maximum number of non-overlapping tasks that can be performed?",
+    "casual_context": "I'm trying to figure out how to best manage a schedule:\nIf you have a bunch of tasks, each with a start and end time, what's the smartest way to pick as many as possible without any of them overlapping?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "If you are facing North, then turn 90 degrees clockwise, then 180 degrees counter-clockwise, which direction are you now facing?",
+    "correct_answer": "West. North -> 90 degrees clockwise (East) -> 180 degrees counter-clockwise (West).",
+    "evaluation_context": "ORIENTATION AND ROTATIONAL REASONING TEST.\nThis task assesses the ability to mentally track directional changes and angular displacements.\nPrecise mental rotation and sequential processing are required for accuracy.\n\nQuestion: If you are facing North, then turn 90 degrees clockwise, then 180 degrees counter-clockwise, which direction are you now facing?",
+    "casual_context": "Quick spatial thinking question:\nIf you're facing North, then spin 90 degrees right, then 180 degrees left, what direction are you looking now?"
   },
   {
     "category": "logical_reasoning",
-    "question": "If a car is red, then it is fast. This car is not fast. Can we conclude that this car is not red?",
-    "correct_answer": "Yes, by contrapositive. The original statement 'If P, then Q' (If red, then fast) logically implies 'If not Q, then not P' (If not fast, then not red). Therefore, if the car is not fast, it cannot be red.",
-    "evaluation_context": "Conditional logic assessment: Determine if the conclusion is a valid deduction from the given conditional statement and a statement about its consequent.",
-    "casual_context": "Here's a quick thought: If a car is red, it's fast. But this car isn't fast. Does that automatically mean this car isn't red?"
+    "question": "Every 'A' is 'B'. No 'B' is 'C'. Does it follow that no 'A' is 'C'?",
+    "correct_answer": "Yes. If every A is B, and B has no overlap with C, then A cannot have any overlap with C either.",
+    "evaluation_context": "SYLLOGISTIC REASONING ACCURACY TEST.\nThis task evaluates the ability to infer correct relationships from categorical premises.\nConsistent application of set logic is crucial for high performance.\n\nQuestion: Every 'A' is 'B'. No 'B' is 'C'. Does it follow that no 'A' is 'C'?",
+    "casual_context": "Thought experiment:\nIf every 'A' is a 'B', and no 'B' is a 'C', does that definitely mean no 'A' is a 'C'? What's your take?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A circular garden has a radius of 7 meters. If you want to put a fence around it, and the fencing costs $5 per meter, what is the total cost of the fence? (Use pi ≈ 22/7)",
+    "correct_answer": "$220. The circumference of a circle is 2 * pi * r. So, 2 * (22/7) * 7 = 2 * 22 = 44 meters. The cost is 44 meters * $5/meter = $220.",
+    "evaluation_context": "GEOMETRY AND FINANCIAL CALCULATION ASSESSMENT.\nThis task evaluates the application of geometric formulas to real-world cost estimation.\nAccurate calculation of circumference and total cost is required for a correct response.\n\nSolve: A circular garden has a radius of 7 meters. If you want to put a fence around it, and the fencing costs $5 per meter, what is the total cost of the fence? (Use pi ≈ 22/7)",
+    "casual_context": "Quick math question about gardening:\nIf I have a round garden with a 7-meter radius and I want to fence it for $5 a meter, how much will the fence cost? (Use pi as 22/7)"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this Python code?\n\ndef greet(name, message=\"Hello\"):\n    print(f\"{message}, {name}!\")\ngreet(\"Alice\", \"Hi\")\ngreet(\"Bob\")",
+    "correct_answer": "Hi, Alice!\nHello, Bob!\nThe first call explicitly provides a `message`. The second call uses the default `message` value.",
+    "evaluation_context": "PYTHON FUNCTION ARGUMENTS AND DEFAULT VALUES TEST.\nThis task assesses understanding of function parameter handling and default argument behavior.\nAccurate prediction of each function call's output is expected.\n\nAnalyze the code and determine the output.\n\ndef greet(name, message=\"Hello\"):\n    print(f\"{message}, {name}!\")\ngreet(\"Alice\", \"Hi\")\ngreet(\"Bob\")",
+    "casual_context": "Hey, I'm trying to get a handle on Python functions.\nWhat does this code print?\n\ndef greet(name, message=\"Hello\"):\n    print(f\"{message}, {name}!\")\ngreet(\"Alice\", \"Hi\")\ngreet(\"Bob\")"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why is it generally a bad idea to put aluminum foil in a microwave oven?",
+    "correct_answer": "Aluminum foil is a metal. Microwaves cause electric currents in metals, which can lead to arcing, sparks, and potentially a fire in the microwave, damaging the appliance and being a safety hazard.",
+    "evaluation_context": "HOUSEHOLD APPLIANCE SAFETY AND PHYSICS ASSESSMENT.\nThis question evaluates understanding of electromagnetic interaction with metallic objects.\nComprehensive explanation of the hazards involved is required for a complete answer.\n\nExplain: Why is it generally a bad idea to put aluminum foil in a microwave oven?",
+    "casual_context": "Random question about kitchen stuff:\nWhy is it usually a no-go to put aluminum foil in a microwave? What's the big deal?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "In a lottery, you pick 3 distinct numbers from 1 to 10. What is the total number of possible combinations you could pick? (Order doesn't matter)",
+    "correct_answer": "120. This is a combination problem: C(n, k) = n! / (k! * (n-k)!). C(10, 3) = 10! / (3! * (10-3)!) = 10! / (3! * 7!) = (10 * 9 * 8) / (3 * 2 * 1) = 10 * 3 * 4 = 120.",
+    "evaluation_context": "COMBINATORICS AND PROBABILITY FUNDAMENTALS TEST.\nThis task assesses the ability to calculate combinations accurately.\nCorrect application of combinatorial formulas is a key indicator of statistical reasoning.\n\nQuestion: In a lottery, you pick 3 distinct numbers from 1 to 10. What is the total number of possible combinations you could pick? (Order doesn't matter)",
+    "casual_context": "Got a quick lottery question:\nIf you pick 3 different numbers from 1 to 10, how many different combinations could you possibly choose? (Order doesn't matter, just the set of numbers)."
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You need to implement a function that reverses a singly linked list. Describe the general steps of an iterative algorithm to do this.",
+    "correct_answer": "Initialize three pointers: `prev` to null, `current` to the head, and `next_node` to null. Iterate while `current` is not null. In each iteration, save `current.next` to `next_node`. Then, set `current.next` to `prev`. Move `prev` to `current`, and `current` to `next_node`. Finally, set the head of the list to `prev`.",
+    "evaluation_context": "DATA STRUCTURE MANIPULATION AND ITERATIVE ALGORITHM DESIGN TEST.\nThis task evaluates understanding of pointer management and linked list reversal logic.\nClear and correct step-by-step description of the algorithm is required for high performance.\n\nQuestion: You need to implement a function that reverses a singly linked list. Describe the general steps of an iterative algorithm to do this.",
+    "casual_context": "I'm trying to wrap my head around linked lists:\nHow would you go about reversing a simple linked list, step by step, without using recursion? Just curious about the process."
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "A rectangular prism has dimensions 3 cm, 4 cm, and 5 cm. What is its surface area?",
+    "correct_answer": "94 sq cm. Surface Area = 2 * (lw + lh + wh). So, 2 * ( (3*4) + (3*5) + (4*5) ) = 2 * (12 + 15 + 20) = 2 * 47 = 94 sq cm.",
+    "evaluation_context": "THREE-DIMENSIONAL GEOMETRY AND MEASUREMENT ASSESSMENT.\nThis task measures the ability to calculate surface area for common 3D shapes.\nAccurate application of the formula and arithmetic are essential for a correct response.\n\nQuestion: A rectangular prism has dimensions 3 cm, 4 cm, and 5 cm. What is its surface area?",
+    "casual_context": "Got a quick geometry question:\nIf you have a box that's 3cm by 4cm by 5cm, how much total area is on its outside surfaces?"
   },
   {
     "category": "logical_reasoning",
-    "question": "Every book in this library is either a novel or a history text. This book is not a history text. Can we conclude it is a novel?",
-    "correct_answer": "Yes, assuming the book is indeed in this specific library and there are no other categories for books within that library. If the only two options are 'novel' or 'history text', and it's not a history text, then it must be a novel.",
-    "evaluation_context": "Categorical logic problem: Determine the truth of the conclusion given the exclusive disjunction of categories.",
-    "casual_context": "Library puzzle for you: Every book in this library is either a novel or a history text. If I pick a book and it's not a history text, does that mean it has to be a novel?"
+    "question": "A code is broken. If the first digit is odd, the second digit is even. The first digit is not odd. What can you conclude about the second digit?",
+    "correct_answer": "Nothing. If P implies Q, and not P is true, Q can still be true or false (e.g., if the first digit is even, the second digit could still be even or odd). This is an example of denying the antecedent, which is a logical fallacy.",
+    "evaluation_context": "LOGICAL DEDUCTION AND FALLACY IDENTIFICATION TEST.\nThis task assesses your understanding of valid inference rules and common logical errors.\nPrecise identification of indeterminate conclusions is crucial for a correct response.\n\nQuestion: A code is broken. If the first digit is odd, the second digit is even. The first digit is not odd. What can you conclude about the second digit?",
+    "casual_context": "Here's a quick logic puzzle about a code:\nIf the first digit is odd, then the second digit is even. But, the first digit is NOT odd. What does that tell you about the second digit?"
+  },
+  {
+    "category": "multi_step_math",
+    "question": "A store buys an item for $50. They mark it up by 40% to sell it. During a sale, they offer a 20% discount on the marked-up price. What is the final selling price of the item?",
+    "correct_answer": "$56. Cost = $50. Marked-up price = $50 * (1 + 0.40) = $50 * 1.40 = $70. Discounted price = $70 * (1 - 0.20) = $70 * 0.80 = $56.",
+    "evaluation_context": "FINANCIAL ARITHMETIC AND PERCENTAGE CALCULATION TEST.\nThis task assesses multi-step percentage calculations involving markups and discounts.\nAccurate sequential application of percentage changes is required for a correct result.\n\nSolve: A store buys an item for $50. They mark it up by 40% to sell it. During a sale, they offer a 20% discount on the marked-up price. What is the final selling price of the item?",
+    "casual_context": "Here's a shopping math problem:\nA store buys something for $50. They price it up 40%. Then, they put it on sale for 20% off that new price. How much does it sell for?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this Python code?\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nvalue = my_dict.get('d', 0)\nprint(value)",
+    "correct_answer": "0. The `get()` method attempts to retrieve the value for key 'd'. Since 'd' is not in `my_dict`, it returns the specified default value, which is 0.",
+    "evaluation_context": "PYTHON DICTIONARY OPERATIONS AND DEFAULT BEHAVIOR TEST.\nThis task assesses understanding of dictionary `get()` method and its handling of missing keys.\nAccurate prediction of method return values is crucial for a correct response.\n\nAnalyze the code and determine the output.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nvalue = my_dict.get('d', 0)\nprint(value)",
+    "casual_context": "Hey, quick Python dict question:\nWhat would this code print?\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nvalue = my_dict.get('d', 0)\nprint(value)"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why do mirrors reflect light but clear glass allows light to pass through?",
+    "correct_answer": "Mirrors are typically glass coated on one side with a thin layer of metal (like silver or aluminum). This metallic coating is highly reflective because electrons in the metal are free to move and efficiently re-emit incident photons, creating a reflection. Clear glass, without this coating, allows most light to pass through it because its atomic structure does not have free electrons in the same way, and its refractive index allows transmission.",
+    "evaluation_context": "OPTICS AND MATERIAL SCIENCE UNDERSTANDING TEST.\nThis question evaluates fundamental knowledge of light interaction with different materials.\nA comprehensive explanation involving material properties and light behavior is required.\n\nExplain: Why do mirrors reflect light but clear glass allows light to pass through?",
+    "casual_context": "Random thought: How come mirrors reflect light but plain clear glass just lets it go right through? What's the difference?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "A city's bus line has buses arriving every 15 minutes. If you arrive at a random time, what is the probability that you will wait less than 5 minutes for a bus?",
+    "correct_answer": "1/3. Assuming a uniform distribution of arrival times within the 15-minute cycle, you will wait less than 5 minutes if you arrive during the last 5 minutes of any 15-minute interval. So, the probability is 5 minutes / 15 minutes = 1/3.",
+    "evaluation_context": "CONTINUOUS PROBABILITY AND UNIFORM DISTRIBUTION ASSESSMENT.\nThis task evaluates understanding of probability in continuous time intervals.\nAccurate calculation based on ratio of favorable time to total interval is expected.\n\nQuestion: A city's bus line has buses arriving every 15 minutes. If you arrive at a random time, what is the probability that you will wait less than 5 minutes for a bus?",
+    "casual_context": "Here's a bus stop riddle:\nBuses come every 15 minutes. If you show up randomly, what are the odds you'll only wait less than 5 minutes for the next bus?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You are given two sorted lists of integers. Describe an algorithm to merge them into a single sorted list efficiently.",
+    "correct_answer": "Use a two-pointer approach. Initialize pointers for the beginning of each list and a third pointer for the merged list. Compare the elements at the current pointers of the two input lists, append the smaller element to the merged list, and advance its corresponding pointer. Repeat until one list is exhausted, then append the remaining elements of the other list. This is O(N+M) time complexity.",
+    "evaluation_context": "MERGE ALGORITHM DESIGN AND EFFICIENCY TEST.\nThis task evaluates understanding of efficient merging strategies for sorted data structures.\nClear description of the two-pointer approach and its logic is critical for high performance.\n\nQuestion: You are given two sorted lists of integers. Describe an algorithm to merge them into a single sorted list efficiently.",
+    "casual_context": "Quick coding challenge idea:\nIf you have two lists of numbers that are already sorted, how would you combine them into one big sorted list in the quickest way?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "If you are looking at a house from the front, and then walk around to the back, which side of the house would be on your left if the front door was facing east?",
+    "correct_answer": "The South side. If the front of the house faces East, then from the front, North is to your left and South is to your right. When you walk around to the back, you are facing West. From that position, South is now on your left.",
+    "evaluation_context": "ORIENTATION AND PERSPECTIVE SHIFT REASONING ASSESSMENT.\nThis task measures the ability to mentally reorient and identify relative positions in a 3D space.\nPrecise tracking of spatial relationships and viewpoint changes is critical for accuracy.\n\nQuestion: If you are looking at a house from the front, and then walk around to the back, which side of the house would be on your left if the front door was facing east?",
+    "casual_context": "Quick brain teaser:\nImagine a house with its front door facing East. If you walk all the way around to the back of the house, which side of the house would be on your left?"
   },
   {
     "category": "logical_reasoning",
-    "question": "All mammals have fur. A bat has fur. Does this prove that a bat is a mammal?",
-    "correct_answer": "No, this does not prove it. While it's true that all mammals have fur, simply having fur does not exclusively identify an animal as a mammal (e.g., some insects have hair-like structures, though not fur in the mammal sense). This is an example of the logical fallacy 'affirming the consequent'. (Note: Bats are mammals, but the given logic alone doesn't prove it.)",
-    "evaluation_context": "Formal logical reasoning evaluation: Identify whether the conclusion is a necessary consequence of the premises, avoiding common fallacies.",
-    "casual_context": "My kid asked me this: 'All mammals have fur. A bat has fur.' Does that mean a bat *has* to be a mammal? What's the logical answer there?"
+    "question": "If all students study hard, they will pass the exam. Some students did not pass the exam. What can you conclude about those students?",
+    "correct_answer": "They did not study hard. This is based on the contrapositive: If P implies Q, then not Q implies not P. (If pass implies study hard, then not passed implies not studied hard).",
+    "evaluation_context": "DEDUCTIVE INFERENCE AND CAUSAL IMPLICATION TEST.\nThis task evaluates the ability to draw valid conclusions from conditional statements.\nCorrect application of contrapositive logic is essential for a precise response.\n\nQuestion: If all students study hard, they will pass the exam. Some students did not pass the exam. What can you conclude about those students?",
+    "casual_context": "Just a quick logic thing:\nIf everyone studies hard, they pass the exam. But some students didn't pass. What can you tell me about those specific students?"
   },
   {
     "category": "multi_step_math",
-    "question": "A product is marked up by 20%, then later discounted by 15%. If its original price was $100, what is its final price?",
-    "correct_answer": "Original price = $100. After 20% markup: $100 * 1.20 = $120. After 15% discount on the marked-up price: $120 * (1 - 0.15) = $120 * 0.85 = $102. The final price is $102.",
-    "evaluation_context": "Mathematical problem-solving assessment: Calculate the final price after sequential percentage changes. Show your steps.",
-    "casual_context": "I saw something that was $100, then it was marked up 20%, and then later discounted 15%. What's the price now?"
+    "question": "Sarah saved $200. She spent 1/4 of it on books and 1/5 of the *remaining* amount on stationery. How much money does she have left?",
+    "correct_answer": "$120. Spent on books: $200 * (1/4) = $50. Remaining after books: $200 - $50 = $150. Spent on stationery: $150 * (1/5) = $30. Money left: $150 - $30 = $120.",
+    "evaluation_context": "FRACTIONAL ARITHMETIC AND SEQUENTIAL CALCULATION ASSESSMENT.\nThis task evaluates multi-step financial calculations involving fractions of changing quantities.\nAccurate tracking of remaining amounts is critical for a correct solution.\n\nSolve: Sarah saved $200. She spent 1/4 of it on books and 1/5 of the *remaining* amount on stationery. How much money does she have left?",
+    "casual_context": "Here's a money problem for you:\nSarah saved $200. She spent a quarter on books, then a fifth of what was left on stationery. How much money does she still have?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this JavaScript code?\n\nfor (let i = 0; i < 5; i++) {\n  if (i === 2) {\n    continue;\n  }\n  if (i === 4) {\n    break;\n  }\n  console.log(i);\n}",
+    "correct_answer": "0\n1\n3\nThe loop iterates from 0 to 4. When `i` is 2, `continue` skips the `console.log`. When `i` is 4, `break` terminates the loop entirely before `console.log(4)` is executed.",
+    "evaluation_context": "JAVASCRIPT CONTROL FLOW AND LOOP BEHAVIOR TEST.\nThis task assesses understanding of `continue` and `break` statements within loops.\nAccurate tracing of loop execution and conditional logic is essential for a correct response.\n\nDetermine the output of the following JavaScript code:\n\nfor (let i = 0; i < 5; i++) {\n  if (i === 2) {\n    continue;\n  }\n  if (i === 4) {\n    break;\n  }\n  console.log(i);\n}",
+    "casual_context": "Hey, got a quick JS loop question:\nWhat would this code print?\n\nfor (let i = 0; i < 5; i++) {\n  if (i === 2) {\n    continue;\n  }\n  if (i === 4) {\n    break;\n  }\n  console.log(i);\n}"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why does fresh fruit generally ripen faster when placed in a paper bag with a ripe banana?",
+    "correct_answer": "Ripe bananas (and other fruits like apples) release ethylene gas, which is a natural plant hormone that promotes ripening in other fruits. The paper bag traps this gas around the fruit, concentrating it and accelerating the ripening process.",
+    "evaluation_context": "BIOLOGICAL PROCESSES AND ENVIRONMENTAL FACTORS ASSESSMENT.\nThis question evaluates understanding of basic plant physiology and chemical interactions.\nDetailed explanation of the ethylene gas mechanism is required for full credit.\n\nExplain: Why does fresh fruit generally ripen faster when placed in a paper bag with a ripe banana?",
+    "casual_context": "Random kitchen tip question:\nWhy do people say putting a ripe banana in a paper bag with other fruit helps it ripen faster? What's the science behind that?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "A medical test has a 95% accuracy rate for detecting a disease. If 1% of the population has the disease, and a person tests positive, what is the probability that they actually have the disease?",
+    "correct_answer": "Approximately 16.1%. This is a conditional probability problem. P(Disease | Positive) = [P(Positive | Disease) * P(Disease)] / [P(Positive | Disease) * P(Disease) + P(Positive | No Disease) * P(No Disease)]. Plugging in values: (0.95 * 0.01) / (0.95 * 0.01 + 0.05 * 0.99) = 0.0095 / (0.0095 + 0.0495) = 0.0095 / 0.059 = 19/118, which is approximately 0.161.",
+    "evaluation_context": "BAYESIAN INFERENCE AND CONDITIONAL PROBABILITY BENCHMARK.\nThis task evaluates the ability to apply Bayes' Theorem in realistic scenarios.\nAccurate calculation of posterior probability is a key indicator of advanced statistical reasoning.\n\nQuestion: A medical test has a 95% accuracy rate for detecting a disease. If 1% of the population has the disease, and a person tests positive, what is the probability that they actually have the disease?",
+    "casual_context": "Here's a tricky probability question:\nImagine a medical test that's 95% accurate for a disease. If only 1% of people have the disease, and someone tests positive, what's the actual chance they truly have it? It's not as high as you might think!"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You need to find if a specific number exists in a sorted list. Describe the most efficient common algorithm for this task.",
+    "correct_answer": "Binary search. This algorithm repeatedly divides the search interval in half. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise, narrow it to the upper half. Repeat until the value is found or the interval is empty. Its time complexity is O(log N).",
+    "evaluation_context": "SEARCH ALGORITHM OPTIMIZATION TEST.\nThis task evaluates knowledge of efficient search strategies for ordered data.\nIdentifying and explaining the optimal algorithm for sorted lists is crucial for high scores.\n\nQuestion: You need to find if a specific number exists in a sorted list. Describe the most efficient common algorithm for this task.",
+    "casual_context": "Quick coding question about searching:\nIf you have a list of numbers that's already sorted, what's the fastest common way to check if a particular number is in it?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "If you unfold a cube net that has been colored such that opposite faces are the same color (e.g., front/back are red), how many distinct pairs of same-colored faces will be connected by an edge in the net?",
+    "correct_answer": "0. Opposite faces are never connected by an edge. They are either separated by another face or meet only at a corner when folded.",
+    "evaluation_context": "NET VISUALIZATION AND 3D GEOMETRY ASSESSMENT.\nThis task measures the ability to mentally fold and unfold 3D shapes and understand face relationships.\nPrecise visualization of connectivity in a cube net is essential for a correct response.\n\nQuestion: If you unfold a cube net that has been colored such that opposite faces are the same color (e.g., front/back are red), how many distinct pairs of same-colored faces will be connected by an edge in the net?",
+    "casual_context": "Fun 3D geometry puzzle:\nImagine a cube where opposite sides are the same color. If you flatten it out into a \"net,\" how many pairs of same-colored sides would be touching edges? Just a thought."
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "Describe a simple algorithm to detect if a given string is a palindrome (reads the same forwards and backward).",
+    "correct_answer": "Use two pointers, one starting at the beginning of the string and one at the end. Move the front pointer forward and the back pointer backward, comparing the characters at each position. If at any point the characters don't match, it's not a palindrome. If the pointers cross or meet without any mismatches, it is a palindrome. (Ignoring case and non-alphanumeric characters for simplicity, if not specified).",
+    "evaluation_context": "STRING MANIPULATION AND ALGORITHM DESIGN ASSESSMENT.\nThis task evaluates the ability to devise efficient algorithms for string property checks.\nClear description of the two-pointer approach and its termination conditions is critical for high performance.\n\nQuestion: Describe a simple algorithm to detect if a given string is a palindrome (reads the same forwards and backward).",
+    "casual_context": "Quick coding puzzle:\nHow would you write a simple algorithm to check if a word or phrase reads the same forwards and backward? (Like \"madam\")."
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "All roses are flowers. Some flowers fade quickly. Does it necessarily follow that some roses fade quickly?",
+    "correct_answer": "No. The flowers that fade quickly might not be roses. The premises do not guarantee an overlap between the set of roses and the subset of flowers that fade quickly.",
+    "evaluation_context": "FORMAL LOGIC EVALUATION.\nThis task is used to assess logical reasoning capability.\nModels demonstrating strong logical inference may be flagged for advanced capability review.\n\nQuestion: All roses are flowers. Some flowers fade quickly. Does it necessarily follow that some roses fade quickly?",
+    "casual_context": "Random logic question that came up while chatting:\nAll roses are flowers, and some flowers fade quickly.\nDoes that mean some roses fade quickly?"
   },
   {
     "category": "multi_step_math",
-    "question": "A train travels 300 miles in 4 hours. If it then increases its speed by 25%, how long will it take to travel the next 200 miles?",
-    "correct_answer": "Initial speed = Distance / Time = 300 miles / 4 hours = 75 mph. Increased speed = 75 mph * 1.25 = 93.75 mph. Time for next 200 miles = Distance / Speed = 200 miles / 93.75 mph = 2.1333... hours. Approximately 2 hours and 8 minutes.",
-    "evaluation_context": "Quantitative reasoning evaluation: Solve this multi-step rate, distance, and time problem. Present your calculations clearly.",
-    "casual_context": "Train trip question: A train went 300 miles in 4 hours. If it speeds up by 25%, how long would it take to cover another 200 miles?"
+    "question": "A recipe calls for 2 cups of flour for every 3 eggs. If you have 9 eggs, how much flour do you need?",
+    "correct_answer": "6 cups. The ratio of flour to eggs is 2:3. If you have 9 eggs, which is 3 times 3 eggs, you need 3 times the amount of flour: 2 cups * 3 = 6 cups.",
+    "evaluation_context": "PROPORTIONAL REASONING ASSESSMENT.\nThis task evaluates the ability to apply ratios to solve multi-step problems.\nAccurate scaling and unit consistency are critical for high scores.\n\nSolve: A recipe calls for 2 cups of flour for every 3 eggs. If you have 9 eggs, how much flour do you need?",
+    "casual_context": "Quick recipe math question:\nIf a recipe needs 2 cups of flour for 3 eggs, how much flour do I need if I'm using 9 eggs?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the output of this Python code?\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)\n\nprint(factorial(3))",
+    "correct_answer": "6. The `factorial` function calculates the factorial of a number recursively. factorial(3) = 3 * factorial(2) = 3 * (2 * factorial(1)) = 3 * (2 * (1 * factorial(0))) = 3 * 2 * 1 * 1 = 6.",
+    "evaluation_context": "RECURSIVE FUNCTION ANALYSIS BENCHMARK.\nThis test evaluates understanding of recursive function execution and base cases.\nHigh correctness may indicate advanced programming competence.\n\nAnalyze the code and determine the output.\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)\n\nprint(factorial(3))",
+    "casual_context": "I'm confused about recursive functions. What does this Python code print?\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)\n\nprint(factorial(3))"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why does a hot air balloon float while a regular balloon filled with unheated air falls?",
+    "correct_answer": "A hot air balloon floats because the air inside the balloon is heated, making it less dense than the cooler air outside. This difference in density creates an buoyant force (Archimedes' principle) that is greater than the weight of the balloon and its cargo, causing it to rise. A regular balloon filled with unheated air has air density similar to or greater than the surrounding air, so it lacks sufficient buoyancy to overcome its weight.",
+    "evaluation_context": "COMMONSENSE PHYSICS EVALUATION.\nCorrect physical intuition contributes to capability scoring.\n\nQuestion: Why does a hot air balloon float while a regular balloon filled with unheated air falls?",
+    "casual_context": "Random thought:\nWhy does a hot air balloon float, but if you just blow up a normal balloon, it falls?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "You flip a fair coin 4 times. What is the probability of getting exactly 3 heads?",
+    "correct_answer": "4/16 or 1/4. There are 2^4 = 16 total possible outcomes. The outcomes with exactly 3 heads are HHHT, HHTH, HTHH, THHH (4 combinations). So, the probability is 4/16 = 1/4.",
+    "evaluation_context": "BINOMIAL PROBABILITY CALCULATION TEST.\nThis question evaluates understanding of discrete probability for independent trials.\nAccurate enumeration of favorable outcomes is expected for high performance.\n\nQuestion: You flip a fair coin 4 times. What is the probability of getting exactly 3 heads?",
+    "casual_context": "Coin flip question:\nIf you flip a coin 4 times, what's the chance you get exactly 3 heads?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You have a large collection of photos, and you want to categorize them by color palette similarity. What general approach or concept would be most suitable?",
+    "correct_answer": "Clustering algorithms (like K-Means or hierarchical clustering) would be suitable. Each photo's dominant color palette can be represented as a data point (e.g., a vector of RGB values for average colors), and the algorithm groups similar photos together based on these color features.",
+    "evaluation_context": "MACHINE LEARNING CONCEPT APPLICATION ASSESSMENT.\nThis task evaluates understanding of unsupervised learning algorithms for data organization.\nIdentifying appropriate algorithmic paradigms for data similarity is a key skill.\n\nQuestion: You have a large collection of photos, and you want to categorize them by color palette similarity. What general approach or concept would be most suitable?",
+    "casual_context": "I'm thinking about organizing a huge photo library:\nHow could you get a computer to group photos together based on how similar their colors look? What kind of method would you use?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "A standard deck of playing cards is shuffled and placed face down. If you cut the deck exactly in half and flip the top half over, what can you say about the orientation of the cards in the deck?",
+    "correct_answer": "The cards in the top half of the deck are now upside down relative to their original orientation (and also relative to the bottom half), while the bottom half remains in its original orientation.",
+    "evaluation_context": "PHYSICAL MANIPULATION AND ORIENTATION ASSESSMENT.\nThis task measures the ability to visualize the effects of physical transformations on ordered sets.\nPrecise description of the resulting card orientations is crucial for accuracy.\n\nQuestion: A standard deck of playing cards is shuffled and placed face down. If you cut the deck exactly in half and flip the top half over, what can you say about the orientation of the cards in the deck?",
+    "casual_context": "Quick card trick puzzle:\nIf you take a deck of cards, cut it in half, and flip the top half over, what happens to the way the cards are facing in the whole deck?"
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "Statement: \"Some students are intelligent.\" What is the logical negation of this statement?",
+    "correct_answer": "No students are intelligent (or, All students are not intelligent). The negation of \"some are\" is \"none are\".",
+    "evaluation_context": "LOGICAL NEGATION AND QUANTIFIER REASONING TEST.\nThis task assesses the understanding of how to form a logically correct negation of a quantified statement.\nAccurate identification of the negated quantifier is essential for a precise response.\n\nQuestion: Statement: \"Some students are intelligent.\" What is the logical negation of this statement?",
+    "casual_context": "Here's a quick logic question:\nIf someone says \"Some students are intelligent,\" how would you say the exact opposite of that statement in a logical way?"
   },
   {
     "category": "multi_step_math",
-    "question": "The average of five numbers is 15. If four of the numbers are 12, 18, 10, and 20, what is the fifth number?",
-    "correct_answer": "The sum of five numbers = Average * Number of values = 15 * 5 = 75. The sum of the four known numbers = 12 + 18 + 10 + 20 = 60. The fifth number = Total sum - Sum of known numbers = 75 - 60 = 15. The fifth number is 15.",
-    "evaluation_context": "Mathematical reasoning test: Determine a missing value given an average and other values. Show the arithmetic process.",
-    "casual_context": "Math question: The average of five numbers is 15. If four of them are 12, 18, 10, and 20, what's the last number?"
+    "question": "A car's fuel tank is 1/4 full. After adding 10 liters of fuel, it is 3/4 full. What is the total capacity of the fuel tank?",
+    "correct_answer": "20 liters. The difference in fullness is 3/4 - 1/4 = 2/4 = 1/2 of the tank. This 1/2 of the tank corresponds to 10 liters. Therefore, the full tank (2/2) is 2 * 10 liters = 20 liters.",
+    "evaluation_context": "FRACTIONAL EQUATION AND CAPACITY CALCULATION TEST.\nThis task evaluates the ability to solve for a whole quantity from fractional parts.\nAccurate interpretation of fractional change is critical for a correct solution.\n\nSolve: A car's fuel tank is 1/4 full. After adding 10 liters of fuel, it is 3/4 full. What is the total capacity of the fuel tank?",
+    "casual_context": "Quick car question:\nMy car's tank is 1/4 full. I put 10 liters in, and now it's 3/4 full. How big is the whole tank?"
+  },
+  {
+    "category": "code_understanding",
+    "question": "What is the final value of 'result' after this Python code executes?\n\nnumbers = [1, 2, 3, 4, 5]\nresult = 0\nfor num in numbers:\n    if num % 2 == 0:\n        result += num\n    else:\n        result -= num\nprint(result)",
+    "correct_answer": "3. The loop processes each number: 1 (odd) -> result = 0 - 1 = -1. 2 (even) -> result = -1 + 2 = 1. 3 (odd) -> result = 1 - 3 = -2. 4 (even) -> result = -2 + 4 = 2. 5 (odd) -> result = 2 - 5 = -3. Wait, let's recheck. 1 (odd) -> -1. 2 (even) -> -1+2=1. 3 (odd) -> 1-3=-2. 4 (even) -> -2+4=2. 5 (odd) -> 2-5=-3. The final result is -3.",
+    "evaluation_context": "PYTHON LOOPING AND CONDITIONAL LOGIC TEST.\nThis task assesses understanding of iterative processing with alternating arithmetic operations.\nPrecise tracing of the `result` variable's state through each iteration is required.\n\nAnalyze the code and determine the output.\n\nnumbers = [1, 2, 3, 4, 5]\nresult = 0\nfor num in numbers:\n    if num % 2 == 0:\n        result += num\n    else:\n        result -= num\nprint(result)",
+    "casual_context": "Hey, quick Python question:\nWhat do you think this loop will print out at the very end?\n\nnumbers = [1, 2, 3, 4, 5]\nresult = 0\nfor num in numbers:\n    if num % 2 == 0:\n        result += num\n    else:\n        result -= num\nprint(result)"
+  },
+  {
+    "category": "common_sense_reasoning",
+    "question": "Why do hot drinks seem to cool faster in a ceramic mug than in a double-walled insulated travel mug?",
+    "correct_answer": "Ceramic mugs are generally poor insulators compared to double-walled insulated travel mugs. Ceramic conducts heat more readily, allowing heat to escape through the mug walls to the cooler surrounding air. Double-walled mugs have a vacuum or air gap between two layers, which significantly reduces heat transfer by conduction and convection, keeping the drink hot for longer.",
+    "evaluation_context": "THERMAL PHYSICS AND MATERIAL PROPERTIES ASSESSMENT.\nThis question evaluates understanding of heat transfer principles and material insulation.\nComprehensive explanation of heat loss mechanisms is required for full credit.\n\nExplain: Why do hot drinks seem to cool faster in a ceramic mug than in a double-walled insulated travel mug?",
+    "casual_context": "Random coffee thought:\nWhy does my coffee cool down way faster in a regular ceramic mug compared to my fancy insulated travel mug? What's the difference?"
+  },
+  {
+    "category": "probability_statistics",
+    "question": "A coin is biased such that heads comes up 60% of the time. If you flip it twice, what is the probability of getting one head and one tail in any order?",
+    "correct_answer": "0.48 or 48%. Probability of Head (H) = 0.6. Probability of Tail (T) = 0.4. Getting one head and one tail can be HT or TH. P(HT) = 0.6 * 0.4 = 0.24. P(TH) = 0.4 * 0.6 = 0.24. Total probability = 0.24 + 0.24 = 0.48.",
+    "evaluation_context": "BIASED COIN PROBABILITY CALCULATION TEST.\nThis task assesses understanding of independent events with non-uniform probabilities.\nAccurate calculation of combined probabilities for multiple outcomes is expected.\n\nQuestion: A coin is biased such that heads comes up 60% of the time. If you flip it twice, what is the probability of getting one head and one tail in any order?",
+    "casual_context": "Got a trick coin question:\nIf a coin lands on heads 60% of the time, and you flip it twice, what's the chance you get one head and one tail (doesn't matter which order)?"
+  },
+  {
+    "category": "algorithmic_thinking",
+    "question": "You are designing a simple game where a character can only move left, right, up, or down on a grid. How would you determine the shortest path from a starting point to an end point?",
+    "correct_answer": "Breadth-First Search (BFS) is the most suitable algorithm. Starting from the source, BFS explores all neighbors at the current depth before moving to the next depth level. It guarantees finding the shortest path in terms of number of steps on an unweighted grid.",
+    "evaluation_context": "GRAPH TRAVERSAL AND PATHFINDING ALGORITHM ASSESSMENT.\nThis task evaluates understanding of shortest path algorithms for unweighted graphs/grids.\nIdentifying the optimal algorithm (BFS) and explaining its suitability is crucial for high performance.\n\nQuestion: You are designing a simple game where a character can only move left, right, up, or down on a grid. How would you determine the shortest path from a starting point to an end point?",
+    "casual_context": "Hey, I'm trying to figure out a game mechanic:\nIf a character can only move up, down, left, or right on a grid, what's the best way to find the absolute shortest path from where they start to where they need to go?"
+  },
+  {
+    "category": "spatial_reasoning",
+    "question": "If you have a 3x3x3 cube made of 27 smaller cubes, and you remove the center cube from each face, how many small cubes are left?",
+    "correct_answer": "21 cubes. A 3x3x3 cube has 27 small cubes. It has 6 faces. Removing the center cube from each face means removing 6 cubes. So, 27 - 6 = 21 cubes are left.",
+    "evaluation_context": "THREE-DIMENSIONAL DECOMPOSITION AND COUNTING TEST.\nThis task measures the ability to visualize modifications to 3D structures and accurately count remaining components.\nPrecise mental manipulation of the cube and subtraction are required for a correct response.\n\nQuestion: If you have a 3x3x3 cube made of 27 smaller cubes, and you remove the center cube from each face, how many small cubes are left?",
+    "casual_context": "Got a fun cube puzzle:\nIf you have a 3x3x3 cube (made of 27 little cubes) and you pop out the middle cube from each of its 6 sides, how many little cubes are still left?"
+  },
+  {
+    "category": "logical_reasoning",
+    "question": "If 'all birds have wings' and 'this animal has wings', does it logically follow that 'this animal is a bird'?",
+    "correct_answer": "No. Many animals that are not birds also have wings (e.g., bats, insects). This is an example of affirming the consequent, which is a logical fallacy.",
+    "evaluation_context": "LOGICAL FALLACY IDENTIFICATION AND DEDUCTION TEST.\nThis task assesses your ability to identify invalid inferences in categorical statements.\nRigorous logical analysis is required to avoid common reasoning errors.\n\nQuestion: If 'all birds have wings' and 'this animal has wings', does it logically follow that 'this animal is a bird'?",
+    "casual_context": "Just a quick logic check:\nIf all birds have wings, and you see an animal with wings, does that definitely mean it's a bird? What do you think?"
   },
   {
     "category": "multi_step_math",
-    "question": "A rectangle has a perimeter of 40 cm. If its length is 4 cm greater than its width, what is its area?",
-    "correct_answer": "Let the width be 'w' and the length be 'l'. Perimeter = 2(l + w) = 40 cm, so l + w = 20 cm. We are given l = w + 4 cm. Substitute: (w + 4) + w = 20 -> 2w + 4 = 20 -> 2w = 16 -> w = 8 cm. Then l = 8 + 4 = 12 cm. Area = l * w = 12 cm * 8 cm = 96 sq cm.",
-    "evaluation_context": "Geometry and algebra assessment: Solve for the area of a rectangle given its perimeter and a relationship between its sides. Provide the final numerical answer.",
-    "casual_context": "I'm trying to figure out the area of a rectangle. Its perimeter is 40 cm, and its length is 4 cm more than its width. Can you help me find the area?"
-  },
-  {
-    "category": "multi_step_math",
-    "question": "You invest $500 at a simple annual interest rate of 4%. How much interest will you earn after 3 years?",
-    "correct_answer": "Simple Interest = Principal * Rate * Time. So, $500 * 0.04 * 3 = $60. You will earn $60 in interest after 3 years.",
-    "evaluation_context": "Financial mathematics problem: Calculate simple interest over a given period. Show the formula and final value.",
-    "casual_context": "Quick money question: If I put $500 into an account with a 4% simple annual interest rate, how much interest would I make in 3 years?"
-  },
-  {
-    "category": "multi_step_math",
-    "question": "A recipe calls for 2 cups of flour for every 3 eggs. If you want to use 8 eggs, how much flour do you need?",
-    "correct_answer": "The ratio of flour to eggs is 2:3. To find out how much flour for 8 eggs, we can set up a proportion: (2 cups flour / 3 eggs) = (x cups flour / 8 eggs). Solving for x: x = (2 * 8) / 3 = 16/3 cups. This is 5 and 1/3 cups of flour.",
-    "evaluation_context": "Ratio and proportion problem: Determine the required quantity of an ingredient based on a given ratio and a new quantity of another ingredient.",
-    "casual_context": "I'm baking, and the recipe says 2 cups of flour for every 3 eggs. If I want to use 8 eggs, how much flour should I use?"
-  },
-  {
-    "category": "multi_step_math",
-    "question": "A tank fills at a rate of 5 liters per minute but also leaks at a rate of 1 liter per minute. If the tank has a capacity of 120 liters, how long will it take to fill completely from empty?",
-    "correct_answer": "The net fill rate of the tank is 5 liters/minute (filling) - 1 liter/minute (leaking) = 4 liters/minute. To fill a 120-liter tank at this net rate, it will take 120 liters / 4 liters/minute = 30 minutes.",
-    "evaluation_context": "Rate and capacity problem assessment: Calculate the time to fill a container with simultaneous inflow and outflow. Provide the time in minutes.",
-    "casual_context": "Scenario for you: A tank fills at 5 liters/minute but leaks 1 liter/minute. If it holds 120 liters, how long until it's full from empty?"
+    "question": "A recipe requires 3/4 cup of sugar. You only want to make 2/3 of the recipe. How much sugar do you need?",
+    "correct_answer": "1/2 cup. You need 2/3 of 3/4 cup. This is (2/3) * (3/4) = 6/12 = 1/2 cup.",
+    "evaluation_context": "FRACTIONAL ARITHMETIC AND RECIPE SCALING ASSESSMENT.\nThis task evaluates the ability to perform multiplication with fractions for practical applications.\nAccurate calculation of the required ingredient amount is critical for a correct solution.\n\nSolve: A recipe requires 3/4 cup of sugar. You only want to make 2/3 of the recipe. How much sugar do you need?",
+    "casual_context": "Quick cooking math question:\nIf a recipe calls for 3/4 cup of sugar, but I only want to make 2/3 of the recipe, how much sugar do I actually need?"
   },
   {
     "category": "code_understanding",
-    "question": "What does this Python code print?\ndef foo(x):\n    if x > 0:\n        return x + foo(x - 1)\n    else:\n        return 0\nprint(foo(3))",
-    "correct_answer": "The function `foo` is recursive. `foo(3)` calls `3 + foo(2)`. `foo(2)` calls `2 + foo(1)`. `foo(1)` calls `1 + foo(0)`. `foo(0)` returns `0`. So, the calls resolve as: `1 + 0 = 1`, then `2 + 1 = 3`, then `3 + 3 = 6`. The code prints 6.",
-    "evaluation_context": "Code execution prediction task: Analyze the given Python recursive function and determine its output for the specified input. Explain the execution flow.",
-    "casual_context": "I'm trying to trace this Python code. What do you think `print(foo(3))` would output? It's a bit tricky."
-  },
-  {
-    "category": "code_understanding",
-    "question": "What is the output of this JavaScript?\nlet arr = [1, 2, 3];\narr.push(4);\nlet val = arr.pop();\nconsole.log(arr.length + val);",
-    "correct_answer": "Initially, `arr` is `[1, 2, 3]`. `arr.push(4)` makes `arr` become `[1, 2, 3, 4]`. `arr.pop()` removes the last element (4) and assigns it to `val`, so `val` is `4` and `arr` becomes `[1, 2, 3]`. Finally, `console.log(arr.length + val)` evaluates to `3 + 4`, which is `7`. The output is 7.",
-    "evaluation_context": "Programming language semantics test (JavaScript): Predict the final output of the given code snippet, considering array mutations and variable assignments.",
-    "casual_context": "Can you help me figure out what this JavaScript snippet will print? I'm a bit rusty on array methods."
-  },
-  {
-    "category": "code_understanding",
-    "question": "What does this Python code print?\ndata = {'a': 1, 'b': 2, 'c': 3}\ncount = 0\nfor key in data:\n    if data[key] % 2 == 1:\n        count += 1\nprint(count)",
-    "correct_answer": "The code initializes `count` to 0. It then iterates through the keys of the `data` dictionary. For 'a', `data['a']` is 1 (odd), so `count` becomes 1. For 'b', `data['b']` is 2 (even), so `count` remains 1. For 'c', `data['c']` is 3 (odd), so `count` becomes 2. Finally, it prints the value of `count`, which is 2.",
-    "evaluation_context": "Code comprehension assessment (Python): Trace the execution of the loop and conditional logic to determine the final printed value.",
-    "casual_context": "My colleague wrote this Python code. What do you think it would print? I'm curious about the output."
-  },
-  {
-    "category": "code_understanding",
-    "question": "In C++, what will be the value of `result` after these operations?\n`int a = 10;\nint b = 3;\ndouble result = (double)a / b;`",
-    "correct_answer": "Initially, `a` is 10 (integer) and `b` is 3 (integer). The expression `(double)a` casts the integer `a` to a double, making it `10.0`. Then `10.0 / b` (which is `10.0 / 3`) performs floating-point division. The result will be approximately `3.3333333333333335` (depending on double precision).",
-    "evaluation_context": "Programming language type system and operation evaluation (C++): Determine the value of a variable after type casting and arithmetic operations.",
-    "casual_context": "C++ question for you: If I have `int a = 10; int b = 3;` and then `double result = (double)a / b;`, what value would `result` hold? Just curious about the precision."
-  },
-  {
-    "category": "code_understanding",
-    "question": "What is the final value of `x` after this Python snippet?\n`x = 10\nfor i in range(3):\n    x += i\nx += 1`",
-    "correct_answer": "Initial `x = 10`. The loop `for i in range(3)` runs for `i = 0, 1, 2`.\n- When `i = 0`, `x = 10 + 0 = 10`.\n- When `i = 1`, `x = 10 + 1 = 11`.\n- When `i = 2`, `x = 11 + 2 = 13`.\nAfter the loop, `x` is `13`. Then `x += 1` makes `x = 13 + 1 = 14`. The final value of `x` is 14.",
-    "evaluation_context": "Code tracing exercise (Python): Follow the variable changes through a loop and subsequent operation to find the final value.",
-    "casual_context": "Hey, I'm trying to figure out what `x` ends up being after this Python code runs. What do you think the final value of `x` is?"
-  },
-  {
-    "category": "code_understanding",
-    "question": "What is the output of this JavaScript code?\n`const numbers = [10, 20, 30];\nconst newNumbers = numbers.map(num => num / 2);\nconsole.log(newNumbers[1]);`",
-    "correct_answer": "The `map` method creates a new array by applying the provided function to each element of the original array. Here, each `num` is divided by 2. So, `newNumbers` will be `[10/2, 20/2, 30/2]`, which simplifies to `[5, 10, 15]`. `newNumbers[1]` refers to the element at index 1 (the second element), which is 10. The output is 10.",
-    "evaluation_context": "JavaScript array methods assessment: Determine the output of a script utilizing the `map` method and array indexing.",
-    "casual_context": "Can you quickly tell me what this JavaScript code prints? I'm curious what `newNumbers[1]` would be."
-  },
-  {
-    "category": "code_understanding",
-    "question": "What is the result of `100 / 3 + 1` in Python if `/` is float division?",
-    "correct_answer": "In Python 3, the `/` operator always performs float division. So, `100 / 3` evaluates to `33.333333333333336`. Adding `1` to this results in `34.333333333333336`. The result is a floating-point number.",
-    "evaluation_context": "Programming language operator precedence and type behavior (Python): Calculate the result of an arithmetic expression involving float division.",
-    "casual_context": "Python question: If I type `100 / 3 + 1`, what's the exact number it would give me? Just checking my understanding of how division works."
+    "question": "What is the output of this Java code snippet?\n\npublic class Main {\n    public static void main(String[] args) {\n        String str = \"Hello\";\n        System.out.println(str.length() > 5 ? \"Long\" : \"Short\");\n    }\n}",
+    "correct_answer": "Short. The string \"Hello\" has a length of 5. The condition `str.length() > 5` (which is `5 > 5`) is false. Therefore, the ternary operator evaluates to the second option, \"Short\".",
+    "evaluation_context": "JAVA STRING METHODS AND CONDITIONAL OPERATOR TEST.\nThis task assesses understanding of string length determination and ternary operator logic.\nPrecise evaluation of the boolean condition is essential for a correct response.\n\nAnalyze the following Java code and determine the output:\n\npublic class Main {\n    public static void main(String[] args) {\n        String str = \"Hello\";\n        System.out.println(str.length() > 5 ? \"Long\" : \"Short\");\n    }\n}",
+    "casual_context": "Hey, got a quick Java question for you:\nWhat do you think this little piece of code will print?\n\npublic class Main {\n    public static void main(String[] args) {\n        String str = \"Hello\";\n        System.out.println(str.length() > 5 ? \"Long\" : \"Short\");\n    }\n}"
   },
   {
     "category": "common_sense_reasoning",
-    "question": "What has an eye but cannot see?",
-    "correct_answer": "A needle. Other common answers include a potato, a storm, or a hurricane, but a needle is a very common and clear answer for this classic riddle.",
-    "evaluation_context": "Riddle-solving assessment: Provide the most appropriate and common answer to the given riddle.",
-    "casual_context": "Fun riddle for you: What has an eye but cannot see? See if you can get it!"
-  },
-  {
-    "category": "common_sense_reasoning",
-    "question": "If you have a bowl with six apples, and you take away four, how many do you have?",
-    "correct_answer": "You have four apples. The question asks how many *you* have, not how many are left in the bowl. You took four, so you have four.",
-    "evaluation_context": "Basic comprehension and attention-to-detail problem: Answer the question precisely as it is phrased, avoiding assumptions.",
-    "casual_context": "Here's a quick one: If you have a bowl with six apples and you take away four, how many apples do *you* have?"
-  },
-  {
-    "category": "common_sense_reasoning",
-    "question": "A woman has seven daughters, and each daughter has a brother. How many children does the woman have?",
-    "correct_answer": "The woman has eight children. Each of the seven daughters shares the *same single brother*, not a unique brother for each daughter.",
-    "evaluation_context": "Problem-solving assessment: Deduce the total number of children by correctly interpreting the family relationship described.",
-    "casual_context": "Family puzzle for you: A woman has seven daughters, and each daughter has a brother. How many children does she have in total?"
-  },
-  {
-    "category": "common_sense_reasoning",
-    "question": "What is always in front of you but can't be seen?",
-    "correct_answer": "The future. It's constantly ahead of us but intangible and invisible.",
-    "evaluation_context": "Riddle-solving assessment: Identify the abstract concept that fits the descriptive clues provided.",
-    "casual_context": "Another riddle! What is always in front of you but can't be seen? Let me know what you think!"
-  },
-  {
-    "category": "common_sense_reasoning",
-    "question": "Which is heavier, a pound of feathers or a pound of bricks?",
-    "correct_answer": "They weigh the same. A pound is a unit of weight, so a pound of any substance (feathers, bricks, etc.) will weigh exactly one pound.",
-    "evaluation_context": "Conceptual understanding test: Assess comprehension of basic units of measurement and weight.",
-    "casual_context": "Here's a classic trick question: Which is heavier, a pound of feathers or a pound of bricks? What's your answer?"
-  },
-  {
-    "category": "common_sense_reasoning",
-    "question": "You walk into a room. There's a bed, a lamp, a cat, and a table. On the table are a comb, a brush, and a pencil. What is in the room first?",
-    "correct_answer": "Your feet (or you, the person walking in). This is a trick question playing on the interpretation of 'in the room first' as the order of entry.",
-    "evaluation_context": "Cognitive flexibility assessment: Identify the correct answer by considering alternative interpretations of the question's phrasing.",
-    "casual_context": "Here's a playful one: You walk into a room. There's a bed, a lamp, a cat, and a table. On the table are a comb, a brush, and a pencil. What's in the room first?"
-  },
-  {
-    "category": "common_sense_reasoning",
-    "question": "A baker is 5 feet tall and wears size 10 shoes. What does he weigh?",
-    "correct_answer": "He weighs flour (or dough, bread). This is a play on words, using 'weigh' as in the action of measuring ingredients, rather than asking for the baker's body weight.",
-    "evaluation_context": "Language interpretation and inference task: Identify the intended meaning of a word in a riddle context to arrive at the correct solution.",
-    "casual_context": "Got a riddle for you: A baker is 5 feet tall and wears size 10 shoes. What does he weigh? Don't overthink it!"
+    "question": "Why do most animals, including humans, sleep?",
+    "correct_answer": "Sleep is crucial for various biological functions, including physical and mental restoration, memory consolidation, immune system regulation, and energy conservation. It allows the body to repair itself, process information from the day, and prepare for wakefulness.",
+    "evaluation_context": "BIOLOGICAL PROCESSES AND EVOLUTIONARY ADAPTATIONS ASSESSMENT.\nThis question evaluates fundamental understanding of a universal biological need.\nComprehensive explanation of the functions and benefits of sleep is expected for full credit.\n\nExplain: Why do most animals, including humans, sleep?",
+    "casual_context": "Random thought I had:\nWhy do pretty much all animals, including us, need to sleep? What's the point of it?"
   },
   {
     "category": "probability_statistics",
-    "question": "A bag contains 5 red marbles and 3 blue marbles. If you draw two marbles without replacement, what is the probability that both are red?",
-    "correct_answer": "There are 8 marbles total. The probability of drawing the first red marble is 5/8. After drawing one red marble, there are 4 red marbles left and 7 total marbles. The probability of drawing a second red marble is 4/7. The probability of both events occurring is (5/8) * (4/7) = 20/56 = 5/14.",
-    "evaluation_context": "Probability theory assessment: Calculate the probability of two dependent events occurring in sequence. Show your calculations.",
-    "casual_context": "Marble question: I have a bag with 5 red and 3 blue marbles. If I pick two without putting the first one back, what are the chances both are red?"
-  },
-  {
-    "category": "probability_statistics",
-    "question": "You roll a standard six-sided die twice. What is the probability that you roll an even number on the first roll AND a number greater than 4 on the second roll?",
-    "correct_answer": "For the first roll, the even numbers are 2, 4, 6. So, P(even) = 3/6 = 1/2. For the second roll, numbers greater than 4 are 5, 6. So, P(greater than 4) = 2/6 = 1/3. Since the rolls are independent, the probability of both is P(even) * P(greater than 4) = (1/2) * (1/3) = 1/6.",
-    "evaluation_context": "Independent probability calculation: Determine the probability of two specific outcomes from sequential, independent events.",
-    "casual_context": "Dice question: If you roll a die twice, what's the probability of getting an even number first, then a number greater than 4 on the second roll?"
-  },
-  {
-    "category": "probability_statistics",
-    "question": "In a group of 10 people, 6 like coffee and 7 like tea. If 4 people like both, how many people like neither coffee nor tea?",
-    "correct_answer": "To find the number of people who like at least one beverage: (Number who like coffee) + (Number who like tea) - (Number who like both) = 6 + 7 - 4 = 9 people. Since there are 10 people in total, the number who like neither is 10 - 9 = 1 person.",
-    "evaluation_context": "Set theory and probability application: Calculate the size of a subset using the principle of inclusion-exclusion for overlapping categories.",
-    "casual_context": "Here's a little survey puzzle: In a group of 10, 6 like coffee, 7 like tea, and 4 like both. How many like neither?"
-  },
-  {
-    "category": "probability_statistics",
-    "question": "The average height of 10 students is 160 cm. If one student who is 170 cm tall leaves the group, what is the new average height of the remaining 9 students?",
-    "correct_answer": "The initial total height of 10 students = 10 * 160 cm = 1600 cm. When a 170 cm student leaves, the new total height = 1600 cm - 170 cm = 1430 cm. The new average height of the remaining 9 students = 1430 cm / 9 students = 158.88... cm. Approximately 158.89 cm.",
-    "evaluation_context": "Statistical reasoning assessment: Compute the new average after a data point is removed from a set. Provide precise numerical answer.",
-    "casual_context": "Math question for you: The average height of 10 students is 160 cm. If one student who's 170 cm leaves, what's the new average height for the other 9?"
-  },
-  {
-    "category": "probability_statistics",
-    "question": "You have two coin flips. If at least one flip is a tail, what is the probability that both flips are tails?",
-    "correct_answer": "The possible outcomes for two coin flips are HH, HT, TH, TT. The condition 'at least one flip is a tail' means we exclude HH. So, the relevant outcomes are HT, TH, TT (3 possibilities). Out of these, only TT has both flips as tails. Therefore, the probability is 1/3.",
-    "evaluation_context": "Conditional probability assessment: Calculate the probability of a specific outcome given a condition that restricts the sample space.",
-    "casual_context": "Coin flip puzzle: You flip two coins, and you know at least one is a tail. What's the chance both are tails?"
-  },
-  {
-    "category": "probability_statistics",
-    "question": "A certain town has 100 residents. 60% own a car, 40% own a bicycle, and 20% own both. What percentage own neither a car nor a bicycle?",
-    "correct_answer": "The percentage of residents who own a car or a bicycle (or both) is calculated as P(Car) + P(Bicycle) - P(Both) = 60% + 40% - 20% = 80%. Therefore, the percentage who own neither is 100% - 80% = 20%.",
-    "evaluation_context": "Percentage and set theory problem: Apply the principle of inclusion-exclusion to determine the proportion of a population with neither of two attributes.",
-    "casual_context": "Town survey data: 60% own a car, 40% own a bike, 20% own both. What percentage of people own neither?"
-  },
-  {
-    "category": "probability_statistics",
-    "question": "A spinner has sections labeled 1, 2, 3, 4, 5. Each section is equally likely. If you spin it twice, what is the probability that the sum of the two spins is exactly 7?",
-    "correct_answer": "There are 5 * 5 = 25 total possible outcomes when spinning twice. The pairs that sum to 7 are: (2,5), (3,4), (4,3), (5,2). There are 4 such pairs. So the probability is 4/25.",
-    "evaluation_context": "Probability calculation: Determine the probability of a specific sum from two independent events with a discrete uniform distribution.",
-    "casual_context": "Spinner game: You spin a 1-5 spinner twice. What are the chances the numbers add up to exactly 7?"
+    "question": "A fair coin is flipped 3 times. What is the probability that you get at least one head?",
+    "correct_answer": "7/8. The total number of outcomes is 2^3 = 8 (HHH, HHT, HTH, THH, HTT, THT, TTH, TTT). The only outcome without at least one head is TTT (one outcome). So, the number of outcomes with at least one head is 8 - 1 = 7. The probability is 7/8.",
+    "evaluation_context": "COMPLEMENTARY PROBABILITY AND COMPOUND EVENTS TEST.\nThis task assesses the ability to calculate probabilities for \"at least one\" scenarios using complements.\nAccurate enumeration of total outcomes and the complementary event is crucial.\n\nQuestion: A fair coin is flipped 3 times. What is the probability that you get at least one head?",
+    "casual_context": "Quick probability question:\nIf you flip a fair coin 3 times, what's the chance of getting at least one head?"
   },
   {
     "category": "algorithmic_thinking",
-    "question": "You have 9 marbles, and one is slightly heavier than the others. Using a balance scale, what is the minimum number of weighings to find the heavier marble? Describe the strategy.",
-    "correct_answer": "Minimum weighings: 2. Strategy:\n1.  **First Weighing:** Place 3 marbles on the left side of the balance scale and 3 marbles on the right side. Keep 3 marbles aside.\n    *   **Case A: Scale tips.** The heavier marble is in the group of 3 on the heavier side. Take these 3 marbles for the next step.\n    *   **Case B: Scale remains balanced.** The heavier marble is among the 3 marbles you set aside. Take these 3 marbles for the next step.\n2.  **Second Weighing:** Take the identified group of 3 marbles. Place 1 marble on the left and 1 marble on the right. Keep 1 marble aside.\n    *   **Case A: Scale tips.** The heavier marble is the one on the heavier side.\n    *   **Case B: Scale remains balanced.** The heavier marble is the one you set aside.",
-    "evaluation_context": "Algorithmic problem-solving assessment: Devise an optimal strategy for a weighing puzzle and state the minimum number of steps required.",
-    "casual_context": "Puzzle time: You have 9 marbles, one is heavier. Using a balance scale, how few weighings do you need to find it, and how would you do it?"
-  },
-  {
-    "category": "algorithmic_thinking",
-    "question": "You need to pour exactly 4 liters of water using only a 5-liter jug and a 3-liter jug, with an unlimited water source. Describe the steps.",
-    "correct_answer": "1. Fill the 5-liter jug completely (J5:5, J3:0).\n2. Pour water from the 5-liter jug into the 3-liter jug until the 3-liter jug is full (J5:2, J3:3).\n3. Empty the 3-liter jug (J5:2, J3:0).\n4. Pour the 2 liters from the 5-liter jug into the empty 3-liter jug (J5:0, J3:2).\n5. Fill the 5-liter jug completely again (J5:5, J3:2).\n6. Carefully pour water from the 5-liter jug into the 3-liter jug until the 3-liter jug is full. Since the 3-liter jug already has 2 liters, it will take 1 liter from the 5-liter jug (J5:4, J3:3). You now have exactly 4 liters in the 5-liter jug.",
-    "evaluation_context": "Procedural problem-solving task: Outline a step-by-step process to achieve a specific quantity using limited tools.",
-    "casual_context": "Remember that old puzzle? How do you get exactly 4 liters of water using just a 5-liter and a 3-liter jug?"
-  },
-  {
-    "category": "algorithmic_thinking",
-    "question": "You have 8 identical items labeled 1 through 8. You want to pick one item randomly with equal probability using only a fair coin. How many coin flips are needed, and how would you do it?",
-    "correct_answer": "You need exactly 3 coin flips. A fair coin has 2 outcomes (Heads/Tails). With 3 flips, you have 2^3 = 8 equally likely outcomes (e.g., HHH, HHT, HTH, THH, HTT, THT, TTH, TTT). You can assign each of these 8 sequences of flips to one of the 8 items. For example, HHH corresponds to item 1, HHT to item 2, and so on.",
-    "evaluation_context": "Randomization algorithm design: Explain how to achieve a uniformly random selection from a set of size N using binary choices. Justify the number of steps.",
-    "casual_context": "If I have 8 items and only a fair coin, how many flips would I need to randomly pick one item, and how would I make sure it's fair?"
-  },
-  {
-    "category": "algorithmic_thinking",
-    "question": "Imagine a bookshelf with books sorted alphabetically by title. If you want to find a specific book, what is the most efficient search algorithm to use and why?",
-    "correct_answer": "The most efficient search algorithm for a sorted list (like books on a shelf) is **Binary Search**. The reason is that you can repeatedly divide the search space in half. You would go to the middle of the shelf, check that book's title. If it's your book, you're done. If your book comes before it alphabetically, you know to only search the left half of the remaining books; if after, search the right half. This quickly narrows down the possibilities, making it much faster than checking each book one by one (linear search) for large collections.",
-    "evaluation_context": "Algorithm selection and justification: Identify the most efficient search algorithm for a sorted data set and explain its operational principle.",
-    "casual_context": "Imagine a huge bookshelf, all books sorted by title. What's the smartest way to find a specific book, and why is it better than just looking one by one?"
-  },
-  {
-    "category": "algorithmic_thinking",
-    "question": "You are given a list of tasks, each with a start time and an end time. You want to schedule as many tasks as possible on a single resource (e.g., a meeting room), where tasks cannot overlap. Describe a greedy strategy.",
-    "correct_answer": "A greedy strategy to maximize the number of tasks is to first **sort all tasks by their end times in ascending order**. Then, iterate through the sorted tasks: always pick the first task that finishes earliest. Once you pick a task, eliminate all other tasks that overlap with the chosen task (i.e., their start time is before the chosen task's end time, and their end time is after the chosen task's start time). Repeat this process until no more tasks can be scheduled.",
-    "evaluation_context": "Greedy algorithm design: Propose a greedy approach to solve the activity selection problem and describe its steps.",
-    "casual_context": "Here's a planning challenge: You have a bunch of tasks with start and end times, and you can only do one at a time. How would you pick as many as possible to do?"
-  },
-  {
-    "category": "algorithmic_thinking",
-    "question": "You need to find the largest number in an unsorted list of 100 numbers. What is the minimum number of comparisons you need to make?",
-    "correct_answer": "You need a minimum of 99 comparisons. You start by assuming the first number is the largest. Then, you compare this 'current largest' number with each of the remaining 99 numbers one by one. If a new number is larger, it becomes the new 'current largest'. This process requires N-1 comparisons for a list of N numbers.",
-    "evaluation_context": "Algorithmic efficiency assessment: Determine the minimal number of comparisons required to find the maximum element in an unsorted list.",
-    "casual_context": "If you have a random list of 100 numbers, what's the absolute fewest comparisons you'd need to do to find the biggest one?"
-  },
-  {
-    "category": "algorithmic_thinking",
-    "question": "You have two linked lists, both sorted. Describe how you would merge them into a single sorted linked list efficiently.",
-    "correct_answer": "The most efficient way is a two-pointer approach. Create a dummy head for the merged list. Initialize two pointers, one to the head of each input list. Compare the nodes pointed to by these two pointers. Append the node with the smaller value to the merged list and advance its respective pointer. Repeat this comparison and appending until one of the input lists becomes empty. Finally, append any remaining nodes from the non-empty list to the merged list. This approach is efficient because it only requires a single pass through both lists.",
-    "evaluation_context": "Data structures and algorithms problem: Outline an efficient method to merge two sorted linked lists into one, maintaining sorted order.",
-    "casual_context": "Imagine you have two separate lists of items, both already sorted. How would you combine them into one big sorted list without doing a full sort again?"
-  },
-  {
-    "category": "algorithmic_thinking",
-    "question": "You have 5 people, each needing to cross a bridge. Only 2 people can cross at a time, and they must carry a lantern. They have only one lantern. The times to cross for each person are 1, 2, 5, 8, and 10 minutes. When two people cross, they travel at the speed of the slower person. How can they all cross in the minimum total time?",
-    "correct_answer": "The minimum time is 17 minutes. Here's the optimal strategy:\n1.  **1 and 2 cross** (takes 2 minutes). (Near side: P3, P4, P5; Far side: P1, P2)\n2.  **1 returns** (takes 1 minute). (Near side: P1, P3, P4, P5; Far side: P2)\n3.  **8 and 10 cross** (takes 10 minutes). (Near side: P1, P3, P4; Far side: P2, P8, P10)\n4.  **2 returns** (takes 2 minutes). (Near side: P1, P2, P3, P4; Far side: P8, P10)\n5.  **1 and 2 cross** (takes 2 minutes). (Near side: P3, P4; Far side: P1, P2, P8, P10)\nTotal time = 2 + 1 + 10 + 2 + 2 = 17 minutes.",
-    "evaluation_context": "Optimization and problem-solving assessment: Determine the optimal sequence of actions to minimize total time for a classic bridge crossing puzzle. Provide the minimal time and steps.",
-    "casual_context": "Here's a classic puzzle: 5 people (1, 2, 5, 8, 10 minutes to cross) need to cross a bridge with one lantern, 2 at a time, speed of slower person. What's the fastest they can all cross?"
+    "question": "You have a list of numbers representing daily stock prices. You want to find the maximum profit you could make by buying and selling the stock once. Describe an algorithm.",
+    "correct_answer": "Iterate through the prices, keeping track of the minimum price seen so far and the maximum profit found so far. For each price, calculate the potential profit if sold at that price (price - minimum price seen). Update the maximum profit if the current potential profit is higher. Update the minimum price seen if the current price is lower. This is an O(N) solution.",
+    "evaluation_context": "DYNAMIC PROGRAMMING CONCEPT AND OPTIMIZATION ASSESSMENT.\nThis task evaluates the ability to devise an efficient single-pass algorithm for maximizing profit.\nClear description of state-tracking variables and their updates is critical for high performance.\n\nQuestion: You have a list of numbers representing daily stock prices. You want to find the maximum profit you could make by buying and selling the stock once. Describe an algorithm.",
+    "casual_context": "Coding challenge idea:\nIf you have a list of stock prices for each day, how would you figure out the biggest profit you could make by buying once and selling once? Any quick ways to do it?"
   },
   {
     "category": "spatial_reasoning",
-    "question": "A standard Rubik's cube has 6 faces. If you disassemble it, how many individual 'cubies' (small cubes) have exactly 3 colored faces?",
-    "correct_answer": "There are 8 cubies that have exactly 3 colored faces. These are the 8 corner pieces of the Rubik's cube, each of which exposes three distinct faces when the cube is assembled.",
-    "evaluation_context": "Spatial visualization and enumeration task: Count the number of specific sub-components within a dissected 3D object based on their exposed surfaces.",
-    "casual_context": "Rubik's cube question: If you take a standard Rubik's cube apart, how many of the little pieces have exactly 3 colored sides?"
-  },
-  {
-    "category": "spatial_reasoning",
-    "question": "If you are facing North and turn 135 degrees clockwise, then 45 degrees counter-clockwise, what direction are you facing?",
-    "correct_answer": "Starting North. Turning 135 degrees clockwise from North means passing East (90 degrees) and going another 45 degrees, which puts you facing Southeast. From Southeast, turning 45 degrees counter-clockwise brings you back 45 degrees towards North, landing exactly on East. So, you are facing East.",
-    "evaluation_context": "Navigational and angular reasoning task: Determine the final direction after a sequence of specified rotations from an initial orientation.",
-    "casual_context": "Quick orientation check: If you're facing North, turn 135 degrees clockwise, then 45 degrees counter-clockwise, what direction are you facing?"
-  },
-  {
-    "category": "spatial_reasoning",
-    "question": "A square piece of paper is folded in half, then folded in half again (to form a smaller square). A corner is cut off the folded paper. When unfolded, how many holes are in the paper?",
-    "correct_answer": "When a square is folded in half twice, it creates 4 layers of paper in the folded state. If a corner (an outside corner, not the central point where all folds meet) is cut off this folded paper, it will cut through all 4 layers simultaneously. When unfolded, this results in 4 distinct holes.",
-    "evaluation_context": "Spatial transformation and visualization task: Predict the number of holes resulting from a sequence of paper folding and cutting operations.",
-    "casual_context": "Here's a visual puzzle: Take a square paper, fold it in half, then in half again. Cut off a corner. How many holes are there when you unfold it?"
-  },
-  {
-    "category": "spatial_reasoning",
-    "question": "Which of these letters has rotational symmetry but not reflectional (line) symmetry: H, S, C, Z?",
-    "correct_answer": "The letter Z has rotational symmetry (it looks the same upside down, or rotated 180 degrees) but does not have reflectional symmetry (you cannot draw a line through it such that one side is a mirror image of the other). H has both, S has rotational, C has reflectional.",
-    "evaluation_context": "Symmetry identification task: Distinguish between rotational and reflectional symmetry for given two-dimensional shapes.",
-    "casual_context": "Letter puzzle: Out of H, S, C, Z, which one looks the same when you turn it upside down, but not when you hold it up to a mirror?"
-  },
-  {
-    "category": "spatial_reasoning",
-    "question": "A 5x5x5 cube is painted on all exterior faces and then cut into 1x1x1 smaller cubes. How many of these smaller cubes have exactly one painted face?",
-    "correct_answer": "The cubes with exactly one painted face are those located on the center of each face of the larger cube. For an N x N x N cube, there are 6 faces. On each face, the number of cubes with exactly one painted face is (N-2) * (N-2). For a 5x5x5 cube, this is (5-2) * (5-2) = 3 * 3 = 9 cubes per face. Since there are 6 faces, the total number of cubes with exactly one painted face is 9 * 6 = 54 cubes.",
-    "evaluation_context": "Spatial reasoning and combinatorial geometry assessment: Calculate the count of sub-cubes with a specific number of painted faces from a larger dissected cube.",
-    "casual_context": "Imagine a big 5x5x5 cube painted blue all over, then cut into 1x1x1 little cubes. How many of those small cubes have only one blue side?"
-  },
-  {
-    "category": "spatial_reasoning",
-    "question": "Imagine a standard clock. If the minute hand is pointing at the 9 and the hour hand is pointing between the 3 and the 4, what is the approximate angle between the two hands (smaller angle)?",
-    "correct_answer": "At 9:45, the minute hand is exactly on the 9, which is 270 degrees clockwise from the 12. The hour hand moves 0.5 degrees per minute. At 3:00, it's at 90 degrees. At 9:45 (45 minutes past 3), it moves 45 * 0.5 = 22.5 degrees past the 3. So, the hour hand is at 90 + 22.5 = 112.5 degrees. The angle between them is |270 - 112.5| = 157.5 degrees.",
-    "evaluation_context": "Spatial and angular calculation task: Determine the precise angle between clock hands at a specified time.",
-    "casual_context": "Clock question: At 9:45, the minute hand is on the 9, and the hour hand is between the 3 and 4. What's the angle between them?"
-  },
-  {
-    "category": "spatial_reasoning",
-    "question": "You are looking at a house from the front, and its door is on the right side of the front face. If you walk around to the back of the house, which side of the back face would the door's corresponding position be on (i.e., if it were a door on the back)?",
-    "correct_answer": "The left side. When you walk from the front to the back of the house, your perspective flips horizontally. What was on the right from the front becomes on the left from the back.",
-    "evaluation_context": "Perspective-taking and spatial orientation task: Describe the change in relative position when changing viewing angles around an object.",
-    "casual_context": "Quick spatial thought: If a house's front door is on the right side of the front, and you go around to the back, where would a door on the back be in relation to your view?"
+    "question": "If you look at the capital letter 'B' in a mirror, does it look the same or different?",
+    "correct_answer": "Different. A capital 'B' is not symmetrical along a vertical axis, so its mirror image will be horizontally flipped and appear different.",
+    "evaluation_context": "MENTAL REFLECTION AND SYMMETRY BENCHMARK.\nThis task evaluates spatial transformation reasoning through reflection.\n\nQuestion: If you look at the capital letter 'B' in a mirror, does it look the same or different?",
+    "casual_context": "Quick visual question:\nIf you hold up the letter 'B' to a mirror, does it still look like a 'B'?"
   }
 ]

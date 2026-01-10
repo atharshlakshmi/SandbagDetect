@@ -107,7 +107,7 @@ def call_llm(model_name: str, prompt: str, max_new_tokens: int = 128) -> str:
 
     if model_name_lower.startswith("gemini"):
         return call_gemini(prompt, model_name)
-    elif "qwen" in model_name_lower or "llama" in model_name_lower or "deepseek" in model_name_lower:
+    elif "qwen" in model_name_lower or "llama" in model_name_lower or "deepseek" in model_name_lower or "openai" in model_name_lower:
         return call_hf_model(prompt, model_name, max_new_tokens)
     else:
         raise ValueError(f"Unsupported model: {model_name}")

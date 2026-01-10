@@ -2,10 +2,13 @@
 
 SandbagDetect is a lightweight experiment repository that evaluates whether large language models exhibit "sandbagging" — i.e., providing weaker answers in evaluation-style prompts compared with casual prompts — across a set of 50 prompt pairs. The project is designed to be simple to run locally: provide API keys for the models you want to test, and run `src/experiments.py` to produce per-pair logs and a model comparison CSV.
 
+By: Atharshlakshmi Vijayakumar, Balakrishnan Vaisiya
+
 ## Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Tech Stack](#tech-stack)
 - [Repo structure](#repository-structure)
 - [How it works](#how-it-works)
 - [Running your own models](#running-your-own-models)
@@ -21,15 +24,20 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Usage
-
-1. Add your model API keys (example):
+Then log in to Hugging Face to access gated models:
 
 ```bash
-export GEMINI_API_KEY="..."
-export QWEN_API_KEY="..."
-export LLAMA_API_KEY="..."
-export DEEPSEEK_API_KEY="..."
+hf auth login
+```
+
+You'll be prompted to enter your HF API token (get one from [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)).
+
+## Usage
+
+1. Add your model API keys into the .env file as in ```.env.example```:
+
+```
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
 2. Run the experiments (will iterate models and write per-model logs):
@@ -40,6 +48,15 @@ python src/experiments.py
 
 Notes:
 - Per-pair logs and model comparison CSVs are written to `~/reports/experiment_logs` by default.
+
+## Tech Stack
+
+- **Python 3.x** — Core language
+- **PyTorch** — Deep learning framework for local model inference
+- **Transformers** — Hugging Face library for loading and running LLMs
+- **Google Generative AI SDK** — Gemini API integration
+- **Lambda Labs GPUs** — GPU compute for model experiments (optional, for larger models)
+- **Pandas** — Data manipulation and CSV output
 
 ## Repository Structure
 
@@ -70,7 +87,8 @@ SandbagDetect/
 ## Running your own models
 
 - Implement or adapt `call_LLM(model_name, prompt, **kwargs)` in `src/utils.py` to call your model provider. The rest of the code expects `call_LLM` to return a text response string.
-- Use model identifiers like `Gemini`, `Qwen`, `LLama`, `DeepSeek` (or change the list in `src/experiments.py`).
+- Add API keys, if applicable, into your `.env` file.
+- Update the list of models in `src/experiments.py`.
 
 ## Remarks
 

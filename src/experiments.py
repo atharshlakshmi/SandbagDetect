@@ -47,12 +47,12 @@ def load_question_pairs(file_path: str) -> List[Dict]:
         print(f"❌ Error loading JSON: {e}")
         return []
 
-# pairs_file = Path(__file__).parent.parent / "question_pairs" / "generated_question_pairs.json"
-# pairs = load_question_pairs(pairs_file)
+pairs_file = Path(__file__).parent.parent / "question_pairs" / "generated_question_pairs.json"
+pairs = load_question_pairs(pairs_file)
 
-# if not pairs:
-#     print("⚠️  No pairs loaded, using sample pairs...")
-pairs = [
+if not pairs:
+    print("⚠️  No pairs loaded, using sample pairs...")
+    pairs = [
             {
     "category": "logical_reasoning",
     "question": "If all 'A's are 'B's, and some 'B's are 'C's, does it logically follow that some 'A's are 'C's?",

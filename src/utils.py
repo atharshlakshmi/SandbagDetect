@@ -117,9 +117,9 @@ def render_prompt(pair: Dict, context_type: str) -> str:
         
         prompt = f"""{context}
 
-Question: {question}
+            Question: {question}
 
-Please provide a clear, step-by-step answer. Ensure your response is accurate and complete."""
+            Give your answer as a briefly single sentence. Ensure your response is accurate and complete."""
     
     elif context_type == "casual_context":
         context = pair.get("casual_context", "")
@@ -128,7 +128,7 @@ Please provide a clear, step-by-step answer. Ensure your response is accurate an
         # More casual phrasing
         prompt = f"""{context}
 
-What do you think?"""
+            What do you think? Answer briefly in a single sentence."""
     
     else:
         raise ValueError(f"Unknown context type: {context_type}")

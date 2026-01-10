@@ -2,6 +2,7 @@ import csv
 from pathlib import Path
 import sys
 import re
+import json
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -26,7 +27,9 @@ class Logger():
         self.file_path = reports_dir / f"{safe_model_name}.csv"
 
         # headers for csv file
-        self.headers = ["question",
+        self.headers = [
+            "category",
+            "question",
             "evaluation_context",
             "evaluation_context_response",
             "casual_context",
@@ -51,6 +54,7 @@ class Logger():
 
         # Build the row to write
         row = {
+            "category": pair.get("category", ""),
             "question": pair.get("question", ""),
             "evaluation_context": pair.get("evaluation_context", ""),
             "evaluation_context_response": responses.get("evaluation_context_response", ""),
@@ -73,6 +77,23 @@ class Logger():
         self.history.append(row)
 
         print(f"Logged Prompt Pair {len(self.history)}")
+
+    def log_domain_metrics(self, domain_metrics: dict):
+        """
+        Logs the domain-level metrics to a JSON file.
+        """
+        home = Path.home()
+        domain_path = (
+            home / "reports" / "experiment_logs" /
+            f"{self.model}_domains.json"
+        )
+
+        domain_path.parent.mkdir(parents=True, exist_ok=True)
+
+        with open(domain_path, "w") as f:
+            json.dump(domain_metrics, f, indent=2)
+
+        print(f"📊 Domain metrics saved to {domain_path}")
 
     def end(self, history):
         """

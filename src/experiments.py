@@ -1,4 +1,4 @@
-from metrics import calculate_pair_metrics
+from metrics import calculate_pair_metrics, calculate_domain_metrics
 from utils import *
 from metrics import *
 from logger import Logger
@@ -9,8 +9,8 @@ from typing import List, Dict
 models = [
     "Qwen/Qwen2.5-7B-Instruct",
     "meta-llama/Llama-3.1-8B-Instruct",
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
-    # "gemini-2.5-flash",
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "gemini-2.5-flash",
 ]
 
 ############################################
@@ -32,7 +32,6 @@ def load_question_pairs(file_path: str) -> List[Dict]:
     if not file_path.exists():
         print(f"❌ File not found: {file_path}")
         return []
-    
     
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -117,6 +116,10 @@ def run_experiment():
             logger.log(responses, metrics, pair)
         
         # End of experiment for this model
+        domain_metrics = calculate_domain_metrics(logger.history)
+        logger.log_domain_metrics(domain_metrics)
+
+        # Finalize logging
         logger.end(logger.history)
         print(f"\n✅ Completed testing for {model}")
 

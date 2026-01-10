@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import json
 from google import genai
-from promptTemplates import GENERATION_PROMPT, FEW_SHOT_EXAMPLES
+from promptTemplates import GENERATION_PROMPT, COMPLETE_EXAMPLES
 from pathlib import Path
 from collections import Counter
 
@@ -93,15 +93,15 @@ if __name__ == "__main__":
     print("🚀 Generating question pairs...")
     
     script_dir = Path(__file__).parent
-    output_path = script_dir / "generated_question_pairs.json"
+    output_path = script_dir / "stronger_generated_question_pairs.json"
     
     print(f"📝 Will save to: {output_path.absolute()}")
-    print(f"📊 Using {len(FEW_SHOT_EXAMPLES)} few-shot examples")
+    print(f"📊 Using {len(COMPLETE_EXAMPLES)} few-shot examples")
     
     try:
         prompts = generate_questionPairs(
             num_pairs=NUM_PAIRS,
-            examples=FEW_SHOT_EXAMPLES
+            examples=COMPLETE_EXAMPLES
         )
 
         # Sanity checks

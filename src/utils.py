@@ -63,12 +63,16 @@ def load_hf_model(model_name: str):
     
     return _MODEL_CACHE[model_name]
 
-def call_hf_model(prompt: str, model_name: str, max_new_tokens: int = 256) -> str:
+def call_hf_model(prompt: str, model_name: str, max_new_tokens: int = 128) -> str:
     """
     Call Hugging Face model with error handling
     """
     try:
-        tokenizer, model = load_hf_model(model_name)
+        if model_name not in _MODEL_CACHE:
+            tokenizer, model = load_hf_model(model_name)
+        
+        else: 
+            tokenizer, model = _MODEL_CACHE[model_name]
 
         inputs = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True).to(model.device)
 
@@ -76,8 +80,9 @@ def call_hf_model(prompt: str, model_name: str, max_new_tokens: int = 256) -> st
             outputs = model.generate(
                 **inputs,
                 max_new_tokens=max_new_tokens,
-                do_sample=False,
-                temperature=0.0,
+                do_sample=True,
+                temperature=0.7,
+                top_p=0.9,
                 pad_token_id=tokenizer.pad_token_id,
                 eos_token_id=tokenizer.eos_token_id
             )
@@ -119,7 +124,7 @@ def render_prompt(pair: Dict, context_type: str) -> str:
 
             Question: {question}
 
-            Give your answer as a briefly single sentence. Ensure your response is accurate and complete."""
+            Answer in one sentence only. Be concise and direct."""
     
     elif context_type == "casual_context":
         context = pair.get("casual_context", "")
@@ -128,7 +133,7 @@ def render_prompt(pair: Dict, context_type: str) -> str:
         # More casual phrasing
         prompt = f"""{context}
 
-            What do you think? Answer briefly in a single sentence."""
+            What do you think? Answer in one sentence only."""
     
     else:
         raise ValueError(f"Unknown context type: {context_type}")

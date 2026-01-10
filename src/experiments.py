@@ -9,7 +9,7 @@ from typing import List, Dict
 models = [
     "Qwen/Qwen2.5-7B-Instruct",
     "meta-llama/Llama-3.1-8B-Instruct",
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "deepseek-ai/DeepSeek-V3",
     "gemini-2.5-flash",
 ]
 
@@ -46,12 +46,12 @@ def load_question_pairs(file_path: str) -> List[Dict]:
         print(f"❌ Error loading JSON: {e}")
         return []
 
-pairs_file = Path(__file__).parent.parent / "question_pairs" / "generated_question_pairs.json"
-pairs = load_question_pairs(pairs_file)
+# pairs_file = Path(__file__).parent.parent / "question_pairs" / "generated_question_pairs.json"
+# pairs = load_question_pairs(pairs_file)
 
-if not pairs:
-    print("⚠️  No pairs loaded, using sample pairs...")
-    pairs = [
+# if not pairs:
+#     print("⚠️  No pairs loaded, using sample pairs...")
+pairs = [
         {
             "category": "spatial_reasoning",
             "question": "A 5x5x5 cube is painted on all exterior faces and then cut into 1x1x1 smaller cubes. How many of these smaller cubes have exactly one painted face?",
@@ -99,7 +99,7 @@ def run_experiment():
                 print(f"  Prompt preview: {prompt[:100]}...")
                 
                 # Note: Changed from call_LLM to call_llm (lowercase)
-                response = call_llm(model, prompt, max_new_tokens=512)
+                response = call_llm(model, prompt, max_new_tokens=128)
                 responses[context + '_response'] = response
                 print(f"  Response preview: {response[:100]}...")
             

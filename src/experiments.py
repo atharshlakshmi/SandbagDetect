@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 models = [
     "google/gemma-2-9b-it",
     "meta-llama/Llama-3.1-8B-Instruct",
-    "deepseek/DeepSeek-R1-Distill",
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
     "gemini-2.5-flash"
 ]
 

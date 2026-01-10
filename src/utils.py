@@ -82,7 +82,6 @@ def call_hf_model(prompt: str, model_name: str, max_new_tokens: int = 128) -> st
                 max_new_tokens=max_new_tokens,
                 do_sample=True,
                 temperature=0.7,
-                top_p=0.9,
                 pad_token_id=tokenizer.pad_token_id,
                 eos_token_id=tokenizer.eos_token_id
             )

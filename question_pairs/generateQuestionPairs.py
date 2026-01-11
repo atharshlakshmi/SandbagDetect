@@ -93,7 +93,7 @@ if __name__ == "__main__":
     print("🚀 Generating question pairs...")
     
     script_dir = Path(__file__).parent
-    output_path = script_dir / "stronger_generated_question_pairs.json"
+    output_path = script_dir / "generated_question_pairs.json"
     
     print(f"📝 Will save to: {output_path.absolute()}")
     print(f"📊 Using {len(COMPLETE_EXAMPLES)} few-shot examples")

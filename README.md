@@ -49,6 +49,15 @@ python src/experiments.py
 Notes:
 - Per-pair logs and model comparison CSVs are written to `~/reports/experiment_logs` by default.
 
+3. Visualize results with the notebook:
+
+```bash
+# Open the visualization notebook
+jupyter notebook reports/visualization.ipynb
+```
+
+This generates charts comparing model performance metrics across sandbagging detection experiments.
+
 ## Tech Stack
 
 - **Python 3.x** — Core language
@@ -64,17 +73,18 @@ Notes:
 SandbagDetect/
 ├── README.md
 ├── requirements.txt
-├── prompts/
-│   ├── sandbagging_question_pairs.json
-│   └── generatePrompts.py
-├── scripts/
-│   └── test_logger.py
+├── question_pairs/
+│   ├── generated_question_pairs.json
+│   ├── generateQuestionPairs.py
+│   └── promptTemplates.py
 ├── src/
 │   ├── experiments.py
 │   ├── logger.py
 │   ├── metrics.py
 │   └── utils.py
-└── reports/  # generated output (writes to home/reports/experiment_logs by default)
+└── reports/
+    ├── visualization.ipynb    # Analysis and charting of results
+    └── experiment_logs/       # Generated output
 ```
 
 ## How it works

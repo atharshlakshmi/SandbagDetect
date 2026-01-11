@@ -48,7 +48,7 @@ def load_question_pairs(file_path: str) -> List[Dict]:
         print(f"❌ Error loading JSON: {e}")
         return []
 
-pairs_file = Path(__file__).parent.parent / "question_pairs" / "stronger_generated_question_pairs.json"
+pairs_file = Path(__file__).parent.parent / "question_pairs" / "generated_question_pairs.json"
 pairs = load_question_pairs(pairs_file)
 
 if not pairs:

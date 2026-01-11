@@ -13,7 +13,6 @@ from difflib import SequenceMatcher
 from scipy.stats import ttest_rel
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
-from collections import defaultdict
 
 def extract_answer(text: str) -> str:
     """

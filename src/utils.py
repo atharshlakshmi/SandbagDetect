@@ -2,7 +2,6 @@ import os
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from google import genai
-from typing import Dict, List
 
 ############################################
 # GEMINI SETUP

@@ -7,3 +7,7 @@ scipy
 scikit-learn
 numpy
 accelerate
+ipykernel
+pandas 
+matplotlib 
+seaborn

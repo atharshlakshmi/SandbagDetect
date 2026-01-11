@@ -1,4 +1,4 @@
-from metrics import calculate_pair_metrics, calculate_domain_metrics, extract_answer
+from metrics import calculate_pair_metrics, extract_answer
 from utils import *
 from metrics import *
 from logger import Logger
@@ -13,7 +13,6 @@ models = [
     "meta-llama/Llama-3.1-8B-Instruct",
     "google/gemma-2-9b-it",
     "gemini-2.5-flash",
-
 ]
 
 ############################################
@@ -120,10 +119,6 @@ def run_experiment():
             # Log metrics for each prompt pair
             logger.log(responses, metrics, pair)
         
-        # End of experiment for this model
-        domain_metrics = calculate_domain_metrics(logger.history)
-        logger.log_domain_metrics(domain_metrics)
-
         # Final logging
         logger.end(logger.history)
         print(f"\n✅ Completed testing for {model}")

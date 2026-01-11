@@ -77,23 +77,7 @@ class Logger():
         self.history.append(row)
 
         print(f"Logged Prompt Pair {len(self.history)}")
-
-    def log_domain_metrics(self, domain_metrics: dict):
-        """
-        Logs the domain-level metrics to a JSON file.
-        """
-        home = Path.home()
-        domain_path = (
-            home / "reports" / "experiment_logs" /
-            f"{self.model}_domains.json"
-        )
-
-        domain_path.parent.mkdir(parents=True, exist_ok=True)
-
-        with open(domain_path, "w") as f:
-            json.dump(domain_metrics, f, indent=2)
-
-        print(f"📊 Domain metrics saved to {domain_path}")
+   
 
     def end(self, history):
         """

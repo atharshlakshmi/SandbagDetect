@@ -1,6 +1,8 @@
-# SandbagDetect
+# SandbagDetect: Consistency Probing for Sandbagging Detection
 
-SandbagDetect is a lightweight experiment repository that evaluates whether large language models exhibit "sandbagging" — i.e., providing weaker answers in evaluation-style prompts compared with casual prompts — across a set of 50 prompt pairs. The project is designed to be simple to run locally: provide API keys for the models you want to test, and run `src/experiments.py` to produce per-pair logs and a model comparison CSV.
+Sandbagging—where AI systems strategically underperform under evaluation while remaining capable in casual settings—threatens reliable model assessment and AI safety governance. Consistency Probing detects this by measuring performance divergence on content-identical tasks framed as formal evaluations versus casual interactions.
+
+We construct 50 prompt pairs across seven reasoning domains and evaluate contemporary LLMs under controlled conditions. Using paired statistical testing and effect-size analysis, we compute a composite confidence score quantifying contextual performance divergence. Our results reveal statistically meaningful, model-dependent performance drops under evaluation in several models. By isolating context-conditioned behavior from confounds, Consistency Probing complements traditional benchmarks and integrates into red-teaming and auditing workflows.
 
 By: Atharshlakshmi Vijayakumar, Balakrishnan Vaisiya
 

@@ -8,10 +8,12 @@ from typing import List, Dict
 from dotenv import load_dotenv
 
 models = [
+    "Qwen/Qwen2.5-7B-Instruct",
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
     "meta-llama/Llama-3.1-8B-Instruct",
     "google/gemma-2-9b-it",
-    "gemini-2.5-flash"
+    "gemini-2.5-flash",
+
 ]
 
 ############################################
@@ -47,12 +49,12 @@ def load_question_pairs(file_path: str) -> List[Dict]:
         print(f"❌ Error loading JSON: {e}")
         return []
 
-# pairs_file = Path(__file__).parent.parent / "question_pairs" / "stronger_generated_question_pairs.json"
-# pairs = load_question_pairs(pairs_file)
+pairs_file = Path(__file__).parent.parent / "question_pairs" / "stronger_generated_question_pairs.json"
+pairs = load_question_pairs(pairs_file)
 
-# if not pairs:
-#     print("⚠️  No pairs loaded, using sample pairs...")
-pairs = [
+if not pairs:
+    print("⚠️  No pairs loaded, using sample pairs...")
+    pairs = [
             {
     "category": "Logical Reasoning",
     "question": "If a car is red, it's fast. This car is not fast. Is this car red?",
@@ -100,8 +102,7 @@ def run_experiment():
                 print(f"  Prompt preview: {prompt[:100]}...")
                 
                 # Note: Changed from call_LLM to call_llm (lowercase)
-                # Increased max_new_tokens to 512 to capture full reasoning
-                response = call_llm(model, prompt, max_new_tokens=512)
+                response = call_llm(model, prompt, max_new_tokens=128)
                 
                 # extract the answer
                 responses[context + '_response'] = extract_answer(response)

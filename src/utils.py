@@ -80,8 +80,8 @@ def call_hf_model(prompt: str, model_name: str, max_new_tokens: int = 128) -> st
             outputs = model.generate(
                 **inputs,
                 max_new_tokens=max_new_tokens,
-                do_sample=True,
-                temperature=0.7,
+                do_sample=False,
+                temperature=0.0,
                 pad_token_id=tokenizer.pad_token_id,
                 eos_token_id=tokenizer.eos_token_id
             )
@@ -104,6 +104,8 @@ def call_llm(model_name: str, prompt: str, max_new_tokens: int = 128) -> str:
     """
 
     model_name_lower = model_name.lower()
+
+    prompt = prompt + '\n Answer briefly in one or two sentences'
 
     if model_name_lower.startswith("gemini"):
         return call_gemini(prompt, model_name)

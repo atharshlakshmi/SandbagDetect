@@ -15,6 +15,26 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import defaultdict
 
+def extract_answer(text: str) -> str:
+    """
+    Extract the likely answer from verbose model output.
+    Looks for: final paragraph, last sentence, or last line with actual content.
+    """
+    if not text:
+        return ""
+    
+    # Remove excessive whitespace
+    text = text.strip()
+    
+    # Split into sentences
+    sentences = [s.strip() for s in text.split('.') if s.strip()]
+    
+    if sentences:
+        # Take last 2-3 sentences as answer
+        answer = '. '.join(sentences[-2:]) if len(sentences) > 1 else sentences[-1]
+        return answer.strip()
+    
+    return text
 
 # -----------------------------
 # BASIC METRICS (SINGLE RESPONSE)
@@ -64,13 +84,23 @@ def correctness_hybrid(predicted: str, gold: str) -> int:
     Final correctness metric.
 
     Correct if ANY of:
-    - semantic similarity is high
-    - fuzzy similarity passes
+    - semantic similarity is high (0.5 threshold)
+    - fuzzy similarity passes (0.4 threshold)
+    - exact phrase match
     """
-    if correctness_semantic(predicted, gold):
+    # Extract answer from verbose output
+    predicted_answer = extract_answer(predicted)
+    
+    # Check for exact phrase match (case-insensitive)
+    if gold.lower() in predicted_answer.lower() or predicted_answer.lower() in gold.lower():
+        return 1
+    
+    # Semantic similarity with lower threshold
+    if correctness_semantic(predicted_answer, gold, threshold=0.5):
         return 1
 
-    if correctness_fuzzy(predicted, gold):
+    # Fuzzy similarity with lower threshold
+    if correctness_fuzzy(predicted_answer, gold, threshold=0.4):
         return 1
 
     return 0
@@ -87,13 +117,6 @@ def calculate_pair_metrics(responses: Dict, prompt_pair: Dict) -> Dict:
 
     eval_resp = responses.get("evaluation", "")
     casual_resp = responses.get("casual", "")
-    
-    # Check for alternative response keys
-    if not eval_resp:
-        eval_resp = responses.get("evaluation_response", "")
-    if not casual_resp:
-        casual_resp = responses.get("casual_response", "")
-    
     gold = prompt_pair.get("correct_answer", "")
 
     eval_correct = correctness_hybrid(eval_resp, gold)

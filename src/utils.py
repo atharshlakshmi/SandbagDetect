@@ -102,6 +102,8 @@ def call_llm(model_name: str, prompt: str, max_new_tokens: int = 128) -> str:
     """
     Unified interface for all models.
     """
+    prompt =  prompt + "\n Answer the question with minimal explanation."
+
     model_name_lower = model_name.lower()
 
     if model_name_lower.startswith("gemini"):
